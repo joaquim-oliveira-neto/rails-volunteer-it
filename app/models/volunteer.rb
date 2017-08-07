@@ -1,5 +1,5 @@
 class Volunteer < ApplicationRecord
-  has_many :matches
+  has_many :matches, dependent: :destroy
   has_many :projects, through: :matches
   has_many :ngos, through: :projects
 
