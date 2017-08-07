@@ -6,7 +6,7 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.string :purpose
       t.string :skills
       t.boolean :remote
-      t.integer :ong_id
+      t.references :ngo, foreign_key: true, index: true
 
       t.timestamps
     end
