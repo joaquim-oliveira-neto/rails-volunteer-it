@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20170807200604) do
   create_table "volunteers", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "e_mail"
+    t.string   "email"
     t.string   "password"
     t.string   "address"
     t.text     "description"
