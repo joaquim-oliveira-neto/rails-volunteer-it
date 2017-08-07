@@ -5,7 +5,7 @@ class CreateNgos < ActiveRecord::Migration[5.0]
       t.string :responsible
       t.text :mini_description
       t.text :full_description
-      t.integer :phone
+      t.string :phone
       t.string :address
       t.string :purpose
       t.string :website
