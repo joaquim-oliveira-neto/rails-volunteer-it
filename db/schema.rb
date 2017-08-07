@@ -48,9 +48,10 @@ ActiveRecord::Schema.define(version: 20170807200604) do
     t.string   "purpose"
     t.string   "skills"
     t.boolean  "remote"
-    t.integer  "ong_id"
+    t.integer  "ngo_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.index ["ngo_id"], name: "index_projects_on_ngo_id", using: :btree
   end
 
   create_table "volunteers", force: :cascade do |t|
@@ -66,4 +67,5 @@ ActiveRecord::Schema.define(version: 20170807200604) do
 
   add_foreign_key "matches", "projects"
   add_foreign_key "matches", "volunteers"
+  add_foreign_key "projects", "ngos"
 end
