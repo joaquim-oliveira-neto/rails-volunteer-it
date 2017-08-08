@@ -12,13 +12,14 @@
   align-items: center;
 }
 .footer-links a {
-  color: white;
+  color: $white;
   opacity: 0.5;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
+  color: $accent-color;
   opacity: 1;
 }
 .footer .fa-heart {
