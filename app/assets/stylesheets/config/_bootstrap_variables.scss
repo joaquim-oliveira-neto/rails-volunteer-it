@@ -9,13 +9,21 @@ $headings-font-family:    $headers-font;
 $body-bg:                 $light-gray;
 $font-size-base: 18px;
 
+
 // Colors
 $gray-base:       $gray;
-$brand-primary:   $blue;
+$brand-primary:   $accent-color;
 $brand-success:   $green;
 $brand-info:      $yellow;
 $brand-danger:    $red;
 $brand-warning:   $orange;
+
+// Colors: links
+$link-hover-color: $accent-color;
+
+// Colors: text
+$text-color: $primary-text;
+
 
 // Buttons & inputs' radius
 $border-radius-base:  2px;
