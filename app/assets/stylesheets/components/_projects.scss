@@ -1,0 +1,72 @@
+#index-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.index-form {
+  margin-top: -150px;
+}
+
+.projects {
+  background-color: #EFEFEF;
+  height: 1000px;
+  margin-top: 30px;
+  position: relative;
+}
+
+
+.card-project {
+  height: 175px;
+  background-color: white;
+  margin-top: 20px;
+  border: 1px solid #DFE1E0;
+  box-shadow: $card-box-shadow;
+  padding: 40px;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.card-project:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.picture-and-description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-description{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-bottom: 15px;
+
+}
+
+.project-local {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-local{
+  color: $blue;
+}
+
+.project-pic img {
+  height: 100px;
+}
+
+#ong-name {
+  margin-top: -11px;
+}

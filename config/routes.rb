@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/select_profile", to: "pages#select_profile", as: :select_profile
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
   resources :projects do
     member do
       get 'confirm', to: 'projects#confirm'
