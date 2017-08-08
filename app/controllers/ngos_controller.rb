@@ -1,7 +1,9 @@
 class NgosController < ApplicationController
-  def index
-  end
 
+  skip_before_action :authenticate_user!
+  def index
+    @ngos = Ngo.all
+  end
   def new
   end
 
