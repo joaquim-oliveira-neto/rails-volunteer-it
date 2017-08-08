@@ -1,59 +1,64 @@
-<div class="navbar-volunteer">
+<div class="navbar-wagon">
   <!-- Logo -->
-  <div class="navbar-volunteer-logo">
-    <a href="/" class="navbar-volunteer-brand">
-      <img src="https://source.unsplash.com/random/100x100" alt="logo"> <!-- place-holder image -->
-    </a>
-    <h3>Volunteer IT</h3>
-  </div>
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "logo.png" %>
+  <% end %>
 
   <!-- Right Navigation -->
-  <div class="navbar-volunteer-right hidden-xs hidden-sm">
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <!-- TO-DO: Add link -->
-    <a href="/ngos/new" class="navbar-volunteer-item navbar-volunteer-link">Add your NGO</a>
-    <%= link_to "Be a volunteer", new_user_registration_path(redirect_to: new_volunteer_path), class: "navbar-volunteer-item navbar-volunteer-link" %>
     <!-- TO-DO: Add link -->
     <a href="" class="navbar-volunteer-item navbar-volunteer-link">Help</a>
-    <!-- TO-DO: Add link -->
+   
     <% if user_signed_in? %>
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
-    <% else %>
-      <a href="" class="navbar-volunteer-item navbar-volunteer-link">Log In</a>
-      <!-- TO-DO: Add link -->
-      <button href="" type="button" class="btn btn-primary btn-sm">Sign Up</button>
-    <% end %>
 
+      <!-- Links when logged in -->
+      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
-
-    <!-- TO-DO: Sign in Avatar appears when you log in. -->
-    <!-- Profile picture with dropdown list -->
-    <!-- <div class="navbar-volunteer-item">
-      <div class="dropdown">
-        <img src="https://source.unsplash.com/random/100x100" class="avatar dropdown-toggle" id="navbar-volunteer-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-volunteer-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
-        </ul>
+      <!-- Avatar with dropdown menu -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div> -->
+    <% else %>
+      <!-- Login link (when logged out) -->
+      <a href="/ngos/new" class="navbar-volunteer-item navbar-volunteer-link">Add your NGO</a>
+      <%= link_to "Be a volunteer", new_user_registration_path(redirect_to: new_volunteer_path), class: "navbar-volunteer-item navbar-volunteer-link" %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
   </div>
 
-  <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-volunteer-item hidden-md hidden-lg">
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-volunteer-dropdown-menu">
-        <!-- TO-DO: Add link -->
-        <li><a href="#">Add your NGOS</a></li>
-        <!-- TO-DO: Add link -->
-        <li><a href="#">Help</a></li>
-        <!-- TO-DO: Add link -->
-        <li><a href="#">Log In</a></li>
-        <!-- TO-DO: Add link -->
-        <li><a href="#">Sign Up</a></li>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><a href="#">Some mobile link</a></li>
+        <li><a href="#">Other one</a></li>
+        <li><a href="#">Other one</a></li>
       </ul>
     </div>
   </div>
 </div>
+
