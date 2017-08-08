@@ -1,10 +1,24 @@
 // Define variables for your color scheme
 
 // For example:
-$red: #EE5F5B;
-$blue: #469AE0;
-$yellow: #FDB631;
-$orange: #E67E22;
-$green: #32B796;
-$gray: #000000;
-$light-gray: #F4F4F4;
+$red: #FF3B3F;
+$blue: #437C90; // SHOULD BE AVOIDED
+$yellow: #FFFF82; // SHOULD BE AVOIDED
+$orange: #E27E44; // SHOULD BE AVOIDED
+$green: #D6E681; // SHOULD BE AVOIDED
+$gray: #393E41;
+$light-gray: #EFEFEF;
+$dark-gray: #A8A8A8;
+$black: #0D1B1E;
+$white: #F9F9F9;
+
+// Color Pallete:
+$light-primary-color: $white;//TO-DO
+$primary-color: $light-gray;//TO-DO
+$dark-primary-color: $dark-gray;//TO-DO
+$accent-color: $red;
+
+// Text color
+$primary-text: $black;
+$secondary-text: $dark-gray;
+$divider-color: $light-gray;

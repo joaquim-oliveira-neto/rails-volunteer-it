@@ -1,9 +1,7 @@
-class NgosController < ApplicationController
-
-  skip_before_action :authenticate_user!
+class VolunteersController < ApplicationController
   def index
-    @ngos = Ngo.all
   end
+
   def new
   end
 
@@ -17,5 +15,6 @@ class NgosController < ApplicationController
   end
 
   def destroy
+
   end
 end
