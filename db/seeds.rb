@@ -1,6 +1,6 @@
 Ngo.destroy_all
 
-ngo0 = Ngo.create!(name: "Rodrigo", responsible: "Pedro" , mini_description: "Ipsus Lorem, blablabla" , full_description: "Ipsus Lorem, blablabla. Ipsus Lorem, blablabla. Ipsus Lorem, blablabla." , phone: "36819237", address: "Mourato Coelho, 200" , purpose: "education", website: "wwww.banana.com.br", facebook: "pedrowski.k", email: "gi.simaes@hotmail.com", password: "35423428")
+ngo0 = Ngo.create!(name: "Giovanna", responsible: "Pedro" , mini_description: "Ipsus Lorem, blablabla" , full_description: "Ipsus Lorem, blablabla. Ipsus Lorem, blablabla. Ipsus Lorem, blablabla." , phone: "36819237", address: "Mourato Coelho, 200" , purpose: "education", website: "wwww.banana.com.br", facebook: "pedrowski.k", email: "gi.simaes@hotmail.com", password: "35423428")
 ngo1 = Ngo.create!(name: "Pedro", responsible: "Rafa" , mini_description: "Ipsus Lorem, blablabla" , full_description: "Ipsus Lorem, blablabla. Ipsus Lorem, blablabla. Ipsus Lorem, blablabla." , phone: "36819237", address: "Mourato Coelho, 200" , purpose: "education", website: "wwww.banana.com.br", facebook: "nani.k", email: "gi.asfadas@hotmail.com", password: "34234528")
 ngo2 = Ngo.create!(name: "Coelho", responsible: "Manoel" , mini_description: "Ipsus Lorem, blablabla" , full_description: "Ipsus Lorem, blablabla. Ipsus Lorem, blablabla. Ipsus Lorem, blablabla." , phone: "36819237", address: "Mourato Coelho, 200" , purpose: "education", website: "wwww.banana.com.br", facebook: "pedroski.k", email: "gi.adsdasd@hotmail.com", password: "3532428")
 
