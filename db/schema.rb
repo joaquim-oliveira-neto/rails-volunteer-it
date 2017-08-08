@@ -8,7 +8,7 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended that you check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system
 
 ActiveRecord::Schema.define(version: 20170808181835) do
 
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20170808181835) do
     t.string   "password"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_ngos_on_user_id", using: :btree
   end
 
   create_table "projects", force: :cascade do |t|
@@ -86,8 +88,13 @@ ActiveRecord::Schema.define(version: 20170808181835) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_volunteers_on_user_id", using: :btree
   end
 
   add_foreign_key "matches", "projects"
   add_foreign_key "matches", "volunteers"
+  add_foreign_key "ngos", "users"
+  add_foreign_key "volunteers", "users"
+
 end

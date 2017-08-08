@@ -7,6 +7,9 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
+    <!-- TO-DO: Add link -->
+    <a href="" class="navbar-volunteer-item navbar-volunteer-link">Help</a>
+   
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
@@ -40,6 +43,8 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
+      <a href="/ngos/new" class="navbar-volunteer-item navbar-volunteer-link">Add your NGO</a>
+      <%= link_to "Be a volunteer", new_user_registration_path(redirect_to: new_volunteer_path), class: "navbar-volunteer-item navbar-volunteer-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
