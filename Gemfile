@@ -17,6 +17,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
 
+# Facebook connection
+gem 'omniauth-facebook'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'listen', '~> 3.0.5'
