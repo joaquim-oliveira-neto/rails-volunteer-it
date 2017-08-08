@@ -1,30 +1,9 @@
 class VolunteersController < ApplicationController
+  before_action :set_volunteer, only: [:index, :edit, :update, :destroy]
+  skip_before_action :check_user_profile_completed, only: [:new, :create]
 
   def index
-    @projects = current_user.volunteer.projects
-  end
-
-  def new
-  end
-
-  def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-
-  end
-end
-
-before_action :set_volunteer, only: [:show]
-
-  def index
-    @volunteers = Volunteer.all
+    @projects = @volunteer.projects
   end
 
   def new
@@ -34,22 +13,34 @@ before_action :set_volunteer, only: [:show]
   def create
     @volunteer = Volunteer.new(volunteer_params)
     if @volunteer.save
-      redirect_to @volunteer
+      redirect_to volunteers_path
     else
       render :new
     end
   end
 
-  def show
-    @review = Review.new
+  def edit
+  end
+
+  def update
+    if @volunteer.update(volunteer_params)
+      redirect_to volunteers_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+
   end
 
   private
 
   def set_volunteer
-    @volunteer = Volunteer.find(params[:id])
+    @volunteer = current_user.volunteer
   end
 
   def volunteer_params
-    params.require(:volunteer).permit(:name, :address, :phone_number, :category)
+    params.require(:volunteer).permit(:first_name, :last_name, :description)
   end
+end

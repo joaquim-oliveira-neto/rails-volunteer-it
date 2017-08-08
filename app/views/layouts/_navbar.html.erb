@@ -11,7 +11,8 @@
   <div class="navbar-volunteer-right hidden-xs hidden-sm">
 
     <!-- TO-DO: Add link -->
-    <a href="" class="navbar-volunteer-item navbar-volunteer-link">Add your NGOS</a>
+    <a href="/ngos/new" class="navbar-volunteer-item navbar-volunteer-link">Add your NGO</a>
+    <%= link_to "Be a volunteer", new_user_registration_path(redirect_to: new_volunteer_path), class: "navbar-volunteer-item navbar-volunteer-link" %>
     <!-- TO-DO: Add link -->
     <a href="" class="navbar-volunteer-item navbar-volunteer-link">Help</a>
     <!-- TO-DO: Add link -->
