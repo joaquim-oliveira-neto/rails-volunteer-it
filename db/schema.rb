@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170807223454) do
+ActiveRecord::Schema.define(version: 20170808171822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20170807223454) do
     t.string   "password"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_ngos_on_user_id", using: :btree
   end
 
   create_table "projects", force: :cascade do |t|
@@ -48,10 +50,9 @@ ActiveRecord::Schema.define(version: 20170807223454) do
     t.string   "purpose"
     t.string   "skills"
     t.boolean  "remote"
-    t.integer  "ngo_id"
+    t.integer  "ong_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.index ["ngo_id"], name: "index_projects_on_ngo_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,9 +81,12 @@ ActiveRecord::Schema.define(version: 20170807223454) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_volunteers_on_user_id", using: :btree
   end
 
   add_foreign_key "matches", "projects"
   add_foreign_key "matches", "volunteers"
-  add_foreign_key "projects", "ngos"
+  add_foreign_key "ngos", "users"
+  add_foreign_key "volunteers", "users"
 end
