@@ -16,10 +16,18 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
-gem "geocoder" # Google geocode
+gem "geocoder" # Geocode
 gem 'omniauth-facebook' # Facebook connection
 
+gem "coffee-rails" #required: google maps
+gem "gmaps4rails" # Google maps map
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore" #required: google maps
+end
+
 group :development, :test do
+  gem 'web-console' #console to debug
   gem 'binding_of_caller'
   gem 'listen', '~> 3.0.5'
   gem 'pry-byebug'
