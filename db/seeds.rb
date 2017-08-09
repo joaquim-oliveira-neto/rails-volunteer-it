@@ -14,6 +14,7 @@ project2 = Project.create!(name: "Tchondor", mini_description: "Ipsus Lorem, bla
 
 Volunteer.destroy_all
 
+
 volunteer0 = Volunteer.create!(first_name:"Ropo" , last_name: "Aasdas" , user: User.new( email: "eaef@gmail.com" ,password:"987"), address:"Mourato, 403" , description:"Banana de Rojanas")
 volunteer1 = Volunteer.create!(first_name:"Ropo" , last_name: "Aasdas", user: User.new(email: "roro@gmail.com" ,password:"124"), address:"Mourato, 230" , description:"Banana de Bacanas")
 volunteer2 = Volunteer.create!(first_name:"Roro" , last_name: "Baixa", user: User.new(email: "pedro@gmail.com" ,password:"123"), address:"Mourato, 200" , description:"Banana de Pijamas")
