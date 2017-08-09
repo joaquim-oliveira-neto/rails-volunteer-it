@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(version: 20170809165916) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "user_id"
-    t.string   "skills"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "skills"
     t.index ["user_id"], name: "index_ngos_on_user_id", using: :btree
   end
 
