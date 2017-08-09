@@ -16,3 +16,12 @@
 @import "components/banner";
 @import "components/features";
 @import "pages/index";
+
+// Global changes
+hr {
+  margin: 0;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  padding: 0;
+  border-color: $light-gray;
+}

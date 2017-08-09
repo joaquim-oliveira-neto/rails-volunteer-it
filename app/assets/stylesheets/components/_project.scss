@@ -1,3 +1,11 @@
+.container {
+  margin-top: 40px;
+}
+
+h2 {
+  margin: 0;
+}
+
 .volunteers-images {
   display: flex;
   justify-content: space-around;
@@ -8,6 +16,33 @@
 .volunteers-images img:hover {
   cursor: pointer;
 }
+
+.info {
+  margin-bottom: 80px;
+
+  .ngo-logo {
+    float: left;
+    width: 250px;
+    // height: 100px;
+  }
+
+  .ngo-title {
+    text-align: left;
+  }
+
+  .ngo-body {
+    margin-top: 40px;
+  }
+}
+
+.participants-title {
+  text-align: left;
+}
+
+.participants-body {
+  padding: 0px 20px;
+}
+
 .participar {
   background-color: $button-green;
 }
