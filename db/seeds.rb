@@ -2,9 +2,9 @@ User.destroy_all
 
 Ngo.destroy_all
 
-ngo0 = Ngo.create!(name: "Rodrigo", responsible: "Pedro" , mini_description: "Ipsus Lorem, blablabla" , full_description: "Ipsus Lorem, blablabla. Ipsus Lorem, blablabla. Ipsus Lorem, blablabla." , phone: "36819237", address: "Mourato Coelho, 200" , purpose: "education", website: "wwww.banana.com.br", facebook: "pedrowski.k", user: User.new(email: "gi.simaes@hotmail.com", password: "35423428"))
-ngo1 = Ngo.create!(name: "Pedro", responsible: "Rafa" , mini_description: "Ipsus Lorem, blablabla" , full_description: "Ipsus Lorem, blablabla. Ipsus Lorem, blablabla. Ipsus Lorem, blablabla." , phone: "36819237", address: "Mourato Coelho, 200" , purpose: "education", website: "wwww.banana.com.br", facebook: "nani.k", user: User.new(email: "gi.asfadas@hotmail.com", password: "34234528"))
-ngo2 = Ngo.create!(name: "Coelho", responsible: "Manoel" , mini_description: "Ipsus Lorem, blablabla" , full_description: "Ipsus Lorem, blablabla. Ipsus Lorem, blablabla. Ipsus Lorem, blablabla." , phone: "36819237", address: "Mourato Coelho, 200" , purpose: "education", website: "wwww.banana.com.br", facebook: "pedroski.k", user: User.new(email: "gi.adsdasd@hotmail.com", password: "3532428"))
+ngo0 = Ngo.create!(name: "Rodrigo", responsible: "Pedro", mini_description: "Ipsus Lorem, blablabla" , full_description: "Ipsus Lorem, blablabla. Ipsus Lorem, blablabla. Ipsus Lorem, blablabla." , phone: "36819237", address: "Mourato Coelho, 200" , purpose: "education", website: "wwww.banana.com.br", facebook: "pedrowski.k", user: User.create(email: "gi.simaes@hotmail.com", password: "35423428"))
+ngo1 = Ngo.create!(name: "Pedro", responsible: "Rafa" , mini_description: "Ipsus Lorem, blablabla" , full_description: "Ipsus Lorem, blablabla. Ipsus Lorem, blablabla. Ipsus Lorem, blablabla." , phone: "36819237", address: "Mourato Coelho, 200" , purpose: "education", website: "wwww.banana.com.br", facebook: "nani.k", user: User.create(email: "gi.asfadas@hotmail.com", password: "34234528"))
+ngo2 = Ngo.create!(name: "Coelho", responsible: "Manoel" , mini_description: "Ipsus Lorem, blablabla" , full_description: "Ipsus Lorem, blablabla. Ipsus Lorem, blablabla. Ipsus Lorem, blablabla." , phone: "36819237", address: "Mourato Coelho, 200" , purpose: "education", website: "wwww.banana.com.br", facebook: "pedroski.k", user: User.create(email: "gi.adsdasd@hotmail.com", password: "3532428"))
 
 Project.destroy_all
 
@@ -14,9 +14,9 @@ project2 = Project.create!(name: "Tchondor", mini_description: "Ipsus Lorem, bla
 
 Volunteer.destroy_all
 
-volunteer0 = Volunteer.create!(first_name:"Ropo" , last_name: "Aasdas" , user: User.new( email: "eaef@gmail.com" ,password:"987"), address:"Mourato, 403" , description:"Banana de Rojanas")
-volunteer1 = Volunteer.create!(first_name:"Ropo" , last_name: "Aasdas", user: User.new(email: "roro@gmail.com" ,password:"124"), address:"Mourato, 230" , description:"Banana de Bacanas")
-volunteer2 = Volunteer.create!(first_name:"Roro" , last_name: "Baixa", user: User.new(email: "pedro@gmail.com" ,password:"123"), address:"Mourato, 200" , description:"Banana de Pijamas")
+volunteer0 = Volunteer.create!(first_name:"Ropo" , last_name: "Aasdas" , user: User.create( email: "eaef@gmail.com" ,password:"987123"), address:"Mourato, 403" , description:"Banana de Rojanas")
+volunteer1 = Volunteer.create!(first_name:"Ropo" , last_name: "Aasdas", user: User.create(email: "roro@gmail.com" ,password:"124123"), address:"Mourato, 230" , description:"Banana de Bacanas")
+volunteer2 = Volunteer.create!(first_name:"Roro" , last_name: "Baixa", user: User.create(email: "pedro@gmail.com" ,password:"123123"), address:"Mourato, 200" , description:"Banana de Pijamas")
 
 Match.destroy_all
 
