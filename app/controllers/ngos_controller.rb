@@ -8,7 +8,7 @@ class NgosController < ApplicationController
 
   def show
     @ngo = Ngo.find(params[:id])
-    @alert_message = "You are viewing #{@ngo.name}"
+    @ngo_coordinates = { lat: @ngo.latitude, lng: @ngo.longitude }
   end
 
   def new
