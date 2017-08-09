@@ -8,9 +8,9 @@ ngo2 = Ngo.create!(name: "Coelho", responsible: "Manoel" , mini_description: "Ip
 
 Project.destroy_all
 
-project0 = Project.create!(name: "Condor", mini_description: "Ipsus Lorem, blablabla", skills: "programming", remote: true, ngo: ngo0)
-project1 = Project.create!(name: "Bondor", mini_description: "Ipsus Lorem, blablabla", skills: "teaching", remote: false, ngo: ngo1)
-project2 = Project.create!(name: "Tchondor", mini_description: "Ipsus Lorem, blablabla", skills: "typing", remote: true, ngo: ngo2)
+project0 = Project.create!(name: "Condor", mini_description: "Ipsus Lorem, blablabla", skills: "Android", remote: true, ngo: ngo0)
+project1 = Project.create!(name: "Bondor", mini_description: "Ipsus Lorem, blablabla", skills: "IOS", remote: false, ngo: ngo1)
+project2 = Project.create!(name: "Tchondor", mini_description: "Ipsus Lorem, blablabla", skills: "IOS", remote: true, ngo: ngo2)
 
 Volunteer.destroy_all
 

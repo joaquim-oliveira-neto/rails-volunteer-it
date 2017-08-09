@@ -25,16 +25,17 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
-=begin
-    if params["skills"].present? && params["purpose"].present?
+
+    if params["purpose"] == "Todas"
+      @projects = Project.all
+    elsif params["skills"].present? && params["purpose"].present?
       @projects = Project.where(skills: params[:skills]).select{|p| p.ngo.purpose == params[:purpose]}
     elsif params["skill"].present?
       @projects = Project.where(skills: params[:skills])
     elsif params["purpose"].present?
       @projects = Project.select{|p| p.ngo.purpose == params[:purpose]}
     end
-=end
+
   end
 
   def destroy
