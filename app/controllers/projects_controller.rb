@@ -47,7 +47,7 @@ class ProjectsController < ApplicationController
   end
 
   def confirm
-    match = Match.new(params[:description])
+    match = Match.new(matches_params)
     match.volunteer = current_user.volunteer
     match.project = @project
     match.save!
@@ -59,5 +59,9 @@ class ProjectsController < ApplicationController
 
   def set_project
     @project = Project.find(params[:id])
+  end
+
+  def matches_params
+    params.require(:match).permit(:description)
   end
 end

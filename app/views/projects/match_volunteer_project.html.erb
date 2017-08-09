@@ -1,9 +1,9 @@
 <div class="container">
   <div class="card-confirm text-center">
     <h2>Projeto: <%= @project.name %></h2>
-    <p>ONG responsável: <%= @ngo.name %></p>
+    <p>ONG responsável: <%= @project.ngo.name %></p>
 
-    <%= simple_form_for @match do |f| %>
+    <%= simple_form_for(@match, url: confirm_project_path, action: :post) do |f| %>
       <%= f.input :description %>
       <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
