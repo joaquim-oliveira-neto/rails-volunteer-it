@@ -27,6 +27,7 @@ source 'https://rails-assets.org' do
 end
 
 group :development, :test do
+
   gem 'web-console' #console to debug
   gem 'binding_of_caller'
   gem 'listen', '~> 3.0.5'

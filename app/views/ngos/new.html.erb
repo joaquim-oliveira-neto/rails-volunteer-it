@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+      <h1>Olá</h1>
+      <h2>Vamos começar com a criação da sua ONG.</h2>
+      <%= simple_form_for [@ngo] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :adress %>
+        <%= f.input :purpose %>
+        <%= f.input :phone %>
+        <%= f.submit "Criar Conta", class: "btn btn-primary" %>
+      <% end %>
+  </div>
+</div>
+
