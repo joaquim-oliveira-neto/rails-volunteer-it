@@ -3,8 +3,8 @@ User.destroy_all
 Ngo.destroy_all
 
 ngo0 = Ngo.create!(name: "Rodrigo", responsible: "Pedro", mini_description: "Ipsus Lorem, blablabla" , full_description: "Ipsus Lorem, blablabla. Ipsus Lorem, blablabla. Ipsus Lorem, blablabla." , phone: "36819237", address: "Mourato Coelho, 1404, Sao Paulo" , purpose: "Educação", website: "wwww.banana.com.br", facebook: "pedrowski.k", user: User.create(email: "gi.simaes@hotmail.com", password: "35423428"))
-ngo1 = Ngo.create!(name: "Pedro", responsible: "Rafa" , mini_description: "Ipsus Lorem, blablabla" , full_description: "Ipsus Lorem, blablabla. Ipsus Lorem, blablabla. Ipsus Lorem, blablabla." , phone: "36819237", address: "Mourato Coelho, 1304, Sao Paulo" , purpose: "education", website: "wwww.banana.com.br", facebook: "nani.k", user: User.create(email: "gi.asfadas@hotmail.com", password: "34234528"))
-ngo2 = Ngo.create!(name: "Coelho", responsible: "Manoel" , mini_description: "Ipsus Lorem, blablabla" , full_description: "Ipsus Lorem, blablabla. Ipsus Lorem, blablabla. Ipsus Lorem, blablabla." , phone: "36819237", address: "Mourato Coelho, 1204, Sao Paulo" , purpose: "education", website: "wwww.banana.com.br", facebook: "pedroski.k", user: User.create(email: "gi.adsdasd@hotmail.com", password: "3532428"))
+ngo1 = Ngo.create!(name: "Pedro", responsible: "Rafa" , mini_description: "Ipsus Lorem, blablabla" , full_description: "Ipsus Lorem, blablabla. Ipsus Lorem, blablabla. Ipsus Lorem, blablabla." , phone: "36819237", address: "Mourato Coelho, 1304, Sao Paulo" , purpose: "Idosos", website: "wwww.banana.com.br", facebook: "nani.k", user: User.create(email: "gi.asfadas@hotmail.com", password: "34234528"))
+ngo2 = Ngo.create!(name: "Coelho", responsible: "Manoel" , mini_description: "Ipsus Lorem, blablabla" , full_description: "Ipsus Lorem, blablabla. Ipsus Lorem, blablabla. Ipsus Lorem, blablabla." , phone: "36819237", address: "Mourato Coelho, 1204, Sao Paulo" , purpose: "Idosos", website: "wwww.banana.com.br", facebook: "pedroski.k", user: User.create(email: "gi.adsdasd@hotmail.com", password: "3532428"))
 
 Project.destroy_all
 

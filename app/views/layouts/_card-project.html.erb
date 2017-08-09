@@ -2,15 +2,15 @@
   <div class="project-pic">
     <img src="http://lorempixel.com/400/200/" alt="">
   </div>
-  <div class="project-local">
-    <p>Propósito</p>
-    <p class="btn btn-default"><%= project.skills.capitalize %></p>
   <div class="project-description">
     <h2><%= link_to project.name, project_path(project) %></h2>
     <p id="ong-name">ONG Danúsia</p>
     <p><%= project.mini_description %></p>
-
   </div>
+</div>
+<div class="project-local">
+  <p>Propósito</p>
+  <p class="btn btn-default"><%= link_to project.skills.capitalize, project_path(project) %></p>
 </div>
 
 
