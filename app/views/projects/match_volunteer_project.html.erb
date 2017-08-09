@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="card-confirm text-center">
+    <h2>Projeto: <%= @project.name %></h2>
+    <p>ONG responsável: <%= @ngo.name %></p>
+
+    <%= simple_form_for @match do |f| %>
+      <%= f.input :description %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
