@@ -6,6 +6,11 @@ class NgosController < ApplicationController
     @ngos = Ngo.all
   end
 
+  def show
+    @ngo = Ngo.find(params[:id])
+    @alert_message = "You are viewing #{@ngo.name}"
+  end
+
   def new
   end
 
