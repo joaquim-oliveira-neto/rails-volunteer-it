@@ -17,6 +17,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @ngo = Ngo.find(@project.ngo_id)
+    @projects = Project.all
   end
 
   def index
