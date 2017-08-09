@@ -8,7 +8,13 @@ class NgosController < ApplicationController
 
   def show
     @ngo = Ngo.find(params[:id])
-    @ngo_coordinates = { lat: @ngo.latitude, lng: @ngo.longitude }
+
+    # # google maps
+    # @hash = Gmaps4rails.build_markers(@ngo) do |ngo, marker|
+    #   marker.lat ngo.latitude
+    #   marker.lng ngo.longitude
+    #   # marker.infowindow render_to_string(partial: "/ngos/map_box", locals: { ngo: ngo })
+    # end
   end
 
   def new

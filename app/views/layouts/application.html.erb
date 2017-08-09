@@ -15,6 +15,9 @@
     <%= yield %>
     <%= render 'layouts/footer' %>
 
+    <!-- Google Maps (load, but not render) -->
+    <%= render 'layouts/gmaps' %>
+
     <%= javascript_include_tag 'application' %> <!-- Loads javascript -->
     <%= yield(:after_js) %>
   </body>
