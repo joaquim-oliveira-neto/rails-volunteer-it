@@ -1,14 +1,11 @@
-<%= render 'layouts/banner-index' %>
-
 <div class="projects">
   <div class="container">
     <div class="row">
-        <% @projects.each do |project| %>
-            <div class="card-project col-xs-10 col-xs-offset-1">
-              <%= render 'layouts/card-project', project: project  %>
-            </div>
-        <% end %>
+      <% @projects.each do |project| %>
+          <div class="card-project col-xs-10 col-xs-offset-1">
+            <%= render 'layouts/card-project', project: project  %>
+          </div>
+      <% end %>
     </div>
   </div>
 </div>
-

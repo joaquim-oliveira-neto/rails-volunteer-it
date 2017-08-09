@@ -13,9 +13,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-volunteer-item navbar-volunteer-link" %>
-      <%= link_to "Trips", "#", class: "navbar-volunteer-item navbar-volunteer-link" %>
-      <%= link_to "Messages", "#", class: "navbar-volunteer-item navbar-volunteer-link" %>
+      <%= link_to "My Projects", volunteer_or_ngo_path(current_user), class: "navbar-volunteer-item navbar-volunteer-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-volunteer-item">
