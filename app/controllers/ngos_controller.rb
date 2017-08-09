@@ -3,7 +3,7 @@ class NgosController < ApplicationController
   skip_before_action :check_user_profile_completed, only: [:new, :create]
 
   def index
-    @ngos = Ngo.all
+    @projects = current_user.ngo.projects
   end
 
   def show
