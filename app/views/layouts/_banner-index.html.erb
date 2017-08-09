@@ -5,13 +5,27 @@
     </div>
 
     <div class = "index-form">
-      <form class="form-inline">
-          <div class="form-group">
-            <input type="email" class="form-control" id="email">
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control" id="pwd">
-          </div>
+      <form class="form-inline" method="GET" action="/projects">
+          <input type="text" class="form-control input-lg" placeholder="Busque projetos">
+          <select name="skills" id="" class="form-control input-lg">
+            <option value="Websites">Websites</option>
+            <option value="Android">Android</option>
+            <option value="IOS">IOS</option>
+            <option value="Design">Design</option>
+          </select>
+          <select name="purpose" id="" class="form-control input-lg">
+            <option value="Todas">Todas</option>
+            <option value="Capacitação Profissional">Capacitação Profissional</option>
+            <option value="Consumo Consciente">Consumo Consciente</option>
+            <option value="Cultura, Esporte e Arte">Cultura, Esporte e Arte</option>
+            <option value="Defesa de Direitos">Defesa de Direitos</option>
+            <option value="Educação">Educação</option>
+            <option value="Idosos">Idosos</option>
+            <option value="Meio Ambiente">Meio Ambiente</option>
+            <option value="Participação Cidadã">Participação Cidadã</option>
+            <option value="Proteção Animal">Proteção Animal</option>
+            <option value="Pessoas com Deficiência">Pessoas com Deficiência</option>
+          </select>
           <button type="submit" class="btn btn-danger">Buscar</button>
       </form>
     </div>
