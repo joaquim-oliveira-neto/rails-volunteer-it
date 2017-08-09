@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :projects do
     member do
       get 'match_volunteer_project', to: 'projects#match_volunteer_project'
-      get 'confirm', to: 'projects#confirm'
+      post 'confirm', to: 'projects#confirm'
     end
   end
 
