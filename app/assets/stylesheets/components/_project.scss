@@ -1,0 +1,20 @@
+.volunteers-images {
+  display: flex;
+  justify-content: space-around;
+}
+.volunteers-images:nth-child(1) {
+  margin-bottom: 2%;
+}
+.volunteers-images img:hover {
+  cursor: pointer;
+}
+.participar {
+  background-color: $button-green;
+}
+.participar:hover {
+  background-color: $button-green !important;
+  opacity: 0.9 !important;
+}
+.project-views {
+  margin-top: 4%;
+}
