@@ -1,12 +1,13 @@
 class ProjectsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+
+  before_action :set_project, only: [:edit, :update, :destroy, :show]
+  skip_before_action :authenticate_user!, only: ['index', 'show']
 
 
   def new
   end
 
   def create
-
   end
 
   def edit
@@ -20,9 +21,15 @@ class ProjectsController < ApplicationController
   end
 
   def index
-
+    @projects = Project.all
   end
 
   def destroy
+  end
+
+  private
+
+  def set_project
+    @project = Project.find(params[:id])
   end
 end

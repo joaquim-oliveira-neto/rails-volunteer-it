@@ -7,6 +7,11 @@ class NgosController < ApplicationController
     @projects = Project.all
   end
 
+  def show
+    @ngo = Ngo.find(params[:id])
+    @ngo_coordinates = { lat: @ngo.latitude, lng: @ngo.longitude }
+  end
+
   def new
     @ngo = Ngo.new
   end

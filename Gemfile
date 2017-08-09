@@ -16,9 +16,8 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
-
-# Facebook connection
-gem 'omniauth-facebook'
+gem "geocoder" # Google geocode
+gem 'omniauth-facebook' # Facebook connection
 
 group :development, :test do
   gem 'listen', '~> 3.0.5'

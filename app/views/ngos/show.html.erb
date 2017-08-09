@@ -1,0 +1,9 @@
+<!-- Translates the coordinates from ruby to js -->
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var coord = <%= raw @ngo_coordinates.to_json %>;
+
+    });
+  <% end %>
+<% end %>

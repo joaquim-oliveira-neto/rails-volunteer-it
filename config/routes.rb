@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :ngos, except: :show
+  resources :ngos
 
   resources :volunteers, except: :show
 end
