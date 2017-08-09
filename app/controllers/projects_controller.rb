@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
 
 
 
-  before_action :set_project, only: [:edit, :update, :destroy, :show, :confirm]
+  before_action :set_project, only: [:edit, :update, :destroy, :show, :match_volunteer_project, :confirm]
   skip_before_action :authenticate_user!, only: ['index', 'show']
 
 
@@ -39,7 +39,8 @@ class ProjectsController < ApplicationController
   end
 
   def match_volunteer_project
-
+    @project
+    @match = Match.new
   end
 
   def confirm
