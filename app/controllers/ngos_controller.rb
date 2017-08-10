@@ -15,6 +15,7 @@ class NgosController < ApplicationController
   end
 
   def create
+
     @ngo = current_user.ngos.build(ngo_params)
 
     if @ngo.save
@@ -34,9 +35,11 @@ class NgosController < ApplicationController
     # else
     #   render :new
     # end
+
   end
 
   def edit
+    @ngo = Ngo.find(params[:id])
   end
 
   def update
