@@ -1,15 +1,22 @@
 class ProjectsController < ApplicationController
-
-
-
-  before_action :set_project, only: [:edit, :update, :destroy, :show, :confirm]
+  before_action :set_project, only: [:edit, :update, :destroy, :show, :match_volunteer_project, :confirm]
   skip_before_action :authenticate_user!, only: ['index', 'show']
 
 
   def new
+    @project = Project.new
   end
 
   def create
+    ngo = current_user.ngo
+    @project = Project.new(projects_params)
+    @project.ngo = ngo
+    # ngo.projects << @project
+    if @project.save
+      redirect_to ngos_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -42,11 +49,12 @@ class ProjectsController < ApplicationController
   end
 
   def match_volunteer_project
-
+    @project
+    @match = Match.new
   end
 
   def confirm
-    match = Match.new(params[:description])
+    match = Match.new(matches_params)
     match.volunteer = current_user.volunteer
     match.project = @project
     match.save!
@@ -58,5 +66,13 @@ class ProjectsController < ApplicationController
 
   def set_project
     @project = Project.find(params[:id])
+  end
+
+  def projects_params
+    params.require(:project).permit(:name, :mini_description, :skills, :remote)
+  end
+
+  def matches_params
+    params.require(:match).permit(:description)
   end
 end

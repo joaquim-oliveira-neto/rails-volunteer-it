@@ -4,7 +4,7 @@
   </div>
   <div class="project-description">
     <h2><%= link_to project.name, project_path(project) %></h2>
-    <p id="ong-name">ONG Danúsia</p>
+    <p id="ong-name"><%= project.ngo.name %></p>
     <p><%= project.mini_description %></p>
   </div>
 </div>

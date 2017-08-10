@@ -1,15 +1,20 @@
 .container {
-  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 h2 {
   margin: 0;
+  margin-bottom: 10px;
+}
 
+.text {
+  text-align: justify;
 }
 
 .volunteers-images {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 .volunteers-images:nth-child(1) {
   margin-bottom: 2%;
@@ -23,6 +28,7 @@ h2 {
 
   .ngo-logo {
     float: left;
+    margin-bottom: 10px;
     width: 250px;
     // height: 100px;
   }
@@ -42,6 +48,9 @@ h2 {
 
 .participants-body {
   padding: 0px 20px;
+  img {
+    margin: 10px;
+  }
 }
 
 .participar {
