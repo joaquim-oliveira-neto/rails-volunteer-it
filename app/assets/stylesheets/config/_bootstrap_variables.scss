@@ -21,9 +21,10 @@ $brand-warning:   $orange;
 // Colors: links
 $link-color: $black;
 $link-hover-color: $accent-color;
-a {
-  text-decoration: none !important;
-}
+$dropdown-link-color: $black;
+
+// Forms
+$input-color: $gray;
 
 // Colors: text
 $text-color: $primary-text;

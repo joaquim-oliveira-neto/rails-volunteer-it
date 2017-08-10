@@ -17,13 +17,17 @@
 @import "components/features";
 @import "pages/index";
 
-// Global changes
+// Default CSS definitions
+a {
+  text-decoration: none !important;
+}
+
 hr {
   margin: 0;
   margin-top: 5px;
   margin-bottom: 20px;
   padding: 0;
-  border-color: $gray;
+  border-color: $light-gray;
 }
 
 body {
