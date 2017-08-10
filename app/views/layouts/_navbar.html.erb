@@ -43,7 +43,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <a href="/ngos/new" class="navbar-volunteer-item navbar-volunteer-link">Add your NGO</a>
+      <%= link_to "Add you NGO", new_user_registration_path(redirect_to: new_ngo_path), class: "navbar-volunteer-item navbar-volunteer-link" %>
       <%= link_to "Be a volunteer", new_user_registration_path(redirect_to: new_volunteer_path), class: "navbar-volunteer-item navbar-volunteer-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-volunteer-item navbar-volunteer-link" %>
     <% end %>
