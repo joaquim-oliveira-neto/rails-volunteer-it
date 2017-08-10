@@ -29,6 +29,13 @@ class ProjectsController < ApplicationController
   def show
     @ngo = Ngo.find(@project.ngo_id)
     @projects = Project.all
+    @ngo_coordinates = { lat: @ngo.latitude, lng: @ngo.longitude }
+
+
+    @hash = Gmaps4rails.build_markers(@ngo) do |n, marker|
+    marker.lat n.latitude
+    marker.lng n.longitude
+    end
   end
 
   def index
@@ -43,7 +50,14 @@ class ProjectsController < ApplicationController
       @projects = Project.select{|p| p.ngo.purpose == params[:purpose]}
     end
 
+    @ngos = Ngo.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@ngos) do |ngo, marker|
+    marker.lat ngo.latitude
+    marker.lng ngo.longitude
+    end
   end
+
 
   def destroy
   end
