@@ -1,0 +1,25 @@
+#image-create {
+  width: 650px;
+  height: 600px;
+}
+
+.ngo-registration {
+  margin-right: 100px;
+}
+.ngo-create {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.ngo-create h1{
+  font-family: $headers-font
+}
+
+.ngo-create h2{
+  font-family: $body-font;
+  font-weight: lighter;
+}
+
+
