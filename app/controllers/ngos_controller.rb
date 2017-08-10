@@ -23,11 +23,17 @@ class NgosController < ApplicationController
 
   def create
     @ngo = Ngo.new(ngo_params)
-    @ngo.save
-    redirect_to ngo_path(@ngo)
+    @ngo.user = current_user
+
+    if @ngo.save
+      redirect_to ngo_path(@ngo)
+    else
+      render :new
+    end
   end
 
   def edit
+    @ngo = Ngo.find(params[:id])
   end
 
   def update
