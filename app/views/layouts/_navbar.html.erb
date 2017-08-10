@@ -47,8 +47,8 @@
       <%= link_to "Be a volunteer", new_user_registration_path(redirect_to: new_volunteer_path), class: "navbar-volunteer-item navbar-volunteer-link" %> -->
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to "Add your NGO", new_user_registration_path(redirect_to: new_ngo_path), class: "navbar-volunteer-item navbar-volunteer-link" %>
-      <%= link_to "Be a volunteer", new_user_registration_path(redirect_to: new_volunteer_path), class: "navbar-volunteer-item navbar-volunteer-link" %>
+      <%= link_to "Cadastre sua ONG", new_user_registration_path(redirect_to: new_ngo_path), class: "navbar-volunteer-item navbar-volunteer-link" %>
+      <%= link_to "Seja um voluntário", new_user_registration_path(redirect_to: new_volunteer_path), class: "navbar-volunteer-item navbar-volunteer-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-volunteer-item navbar-volunteer-link" %>
     <% end %>
   </div>
