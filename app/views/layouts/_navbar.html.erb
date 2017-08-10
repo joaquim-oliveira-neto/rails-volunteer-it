@@ -7,7 +7,7 @@
   <!-- Right Navigation -->
   <div class="navbar-volunteer-right hidden-xs hidden-sm">
 
-    <% if user_signed_in? %>
+    <% if volunteer_or_ngo_signed_in? %>
 
       <!-- Links when logged in as a ngo -->
       <% if current_user.ngo.present? %>
@@ -15,7 +15,7 @@
       <% end %>
 
       <!-- Links when logged in as a volunteer or as a ngo-->
-      <%= link_to "My Projects", volunteer_or_ngo_path(current_user), class: "navbar-volunteer-item navbar-volunteer-link" %>
+      <%= link_to "My Projects", volunteer_or_ngo_path, class: "navbar-volunteer-item navbar-volunteer-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-volunteer-item">

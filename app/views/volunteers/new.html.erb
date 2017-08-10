@@ -1,2 +1,15 @@
-<h1>Volunteers#new</h1>
-<p>Find me in app/views/volunteers/new.html.erb</p>
+<div class="container">
+  <div class="col-xs-4 col-xs-offset-4">
+      <h3>Que ótimo que você quer ser um voluntário!</h3>
+      <p>Precisamos apenas de alguns dados...</p>
+      <%= simple_form_for @volunteer do |f| %>
+        <%= f.input :first_name, label: false, placeholder: "Nome" %>
+        <%= f.input :last_name, label: false, placeholder: "Sobrenome" %>
+        <%= f.input :address, label: false, placeholder: "Endereço" %>
+        <%= f.input :description, label: false, placeholder: "Breve descrição sobre você" %>
+        <div class="text-center">
+          <%= f.submit "Criar Conta", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+  </div>
+</div>
