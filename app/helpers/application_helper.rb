@@ -14,4 +14,9 @@ module ApplicationHelper
       action == :index ? ngos_path : edit_ngo_path(current_user.ngo)
     end
   end
+
+  def volunteer_or_ngo
+    current_user.volunteer.present? ? current_user.volunteer : current_user.ngo
+
+  end
 end

@@ -7,6 +7,8 @@ class Volunteer < ApplicationRecord
 
   validates :first_name, :last_name, :description, presence: true
   validates :user, uniqueness: true
+
+  mount_uploader :photo, PhotoUploader
 end
 
 

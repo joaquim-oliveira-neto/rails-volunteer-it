@@ -11,8 +11,15 @@ class VolunteersController < ApplicationController
   end
 
   def create
-    @volunteer = Volunteer.new(volunteer_params)
+    if current_user.facebook_picture_url.present?
+      Cloudinary::Uploader.upload(current_user.facebook_picture_url)
+      photo = {remote_photo_url: current_user.facebook_picture_url}
+    else
+      photo = {remote_photo_url: "http://placehold.it/50x50"}
+    end
+    @volunteer = Volunteer.new(volunteer_params, photo)
     @volunteer.user = current_user
+
     if @volunteer.save
       redirect_to volunteers_path
     else
@@ -42,6 +49,6 @@ class VolunteersController < ApplicationController
   end
 
   def volunteer_params
-    params.require(:volunteer).permit(:first_name, :last_name, :description)
+    params.require(:volunteer).permit(:first_name, :last_name, :description, :photo, :photo_cache)
   end
 end

@@ -11,6 +11,7 @@ class Ngo < ApplicationRecord
   validates :user, uniqueness: true, presence: true
   after_validation :geocode, if: :address_changed? #validates address coordinates
 
+  mount_uploader :photo, PhotoUploader
 end
 
 

@@ -22,6 +22,9 @@ gem 'omniauth-facebook' # Facebook connection
 gem "coffee-rails" #required: google maps
 gem "gmaps4rails" # Google maps map
 
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
+
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore" #required: google maps
 end
