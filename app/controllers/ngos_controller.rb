@@ -23,8 +23,13 @@ class NgosController < ApplicationController
 
   def create
     @ngo = Ngo.new(ngo_params)
-    @ngo.save
-    redirect_to ngo_path(@ngo)
+    @ngo.user = current_user
+
+    if @ngo.save
+      redirect_to ngo_path(@ngo)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -39,6 +44,6 @@ class NgosController < ApplicationController
   private
 
   def ngo_params
-    params.require(:restaurant).permit(:name, :responsible, :mini_description, :full_description, :phone, :address, :purpose, :website, :facebook, :email, :password)
+    params.require(:ngo).permit(:name, :responsible, :mini_description, :full_description, :phone, :address, :purpose, :website, :facebook, :email, :password)
   end
 end
