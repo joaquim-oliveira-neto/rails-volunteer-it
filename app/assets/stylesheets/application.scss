@@ -23,9 +23,13 @@ hr {
   margin-top: 5px;
   margin-bottom: 20px;
   padding: 0;
-  border-color: $light-gray;
+  border-color: $gray;
 }
 
 body {
   height: 100vh;
+}
+
+.btn {
+  box-shadow: $button-box-shadow;
 }
