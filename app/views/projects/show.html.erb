@@ -54,11 +54,7 @@
             </div>
             <% if current_user.present? %>
               <div class="col-xs-12">
-                <%=  link_to "Participe", match_volunteer_project_project_path, class: "btn btn-primary participe" %>
-              </div>
-            <% else %>
-              <div class="col-xs-12">
-                <%=  link_to "Participe!!", match_volunteer_project_project_path, class: "btn btn-primary participe" %>
+                <%=  link_to "Quero participar", match_volunteer_project_project_path, class: "btn btn-primary participe" %>
               </div>
             <% end %>
           </div>

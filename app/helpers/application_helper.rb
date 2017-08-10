@@ -7,11 +7,11 @@ module ApplicationHelper
     end
   end
 
-  def volunteer_or_ngo_path
+  def volunteer_or_ngo_path(action)
     if current_user.volunteer.present?
-      volunteers_path
+      action == :index ? volunteers_path : edit_volunteer_path(current_user.volunteer)
     else
-      ngos_path
+      action == :index ? ngos_path : edit_ngo_path(current_user.ngo)
     end
   end
 end
