@@ -47,10 +47,13 @@
 .project-description{
   display: flex;
   flex-direction: column;
+  margin-top: 25px;
   margin-left: 20px;
   margin-bottom: 15px;
 }
-
+.project-description p {
+  margin-left: 2px;
+}
 .card-project:nth-last-child(1) {
   margin-bottom: 3%;
 }
@@ -72,4 +75,10 @@
 
 #ong-name {
   margin-top: -11px;
+  margin-left: 5px;
+}
+
+#default-message {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }

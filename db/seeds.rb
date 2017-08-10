@@ -12,6 +12,7 @@ project0 = Project.create!(name: "Website Alunos", mini_description: "Ipsus Lore
 project1 = Project.create!(name: "App da Vovó", mini_description: "Ipsus Lorem, blablabla", skills: "IOS", remote: false, ngo: ngo1)
 project2 = Project.create!(name: "Design da Festa", mini_description: "Ipsus Lorem, blablabla", skills: "IOS", remote: true, ngo: ngo2)
 
+
 Volunteer.destroy_all
 
 
