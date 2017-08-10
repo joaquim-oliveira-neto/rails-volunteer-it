@@ -40,8 +40,14 @@ class ProjectsController < ApplicationController
 
   def index
 
-    if params["purpose"] == "Todas"
+    @projects = Project.all
+
+    if params["skills"] == "Habilidades" && params["purpose"] == "Todas"
       @projects = Project.all
+    elsif params["skills"].present? && params["purpose"] == "Todas"
+      @projects = Project.where(skills: params[:skills])
+    elsif params["skills"] == "Habilidades" && params["purpose"].present?
+      @projects = Project.select{|p| p.ngo.purpose == params[:purpose]}
     elsif params["skills"].present? && params["purpose"].present?
       @projects = Project.where(skills: params[:skills]).select{|p| p.ngo.purpose == params[:purpose]}
     elsif params["skill"].present?

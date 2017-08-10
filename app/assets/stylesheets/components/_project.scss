@@ -24,11 +24,13 @@ h2 {
 }
 
 .info {
+  padding: 0 20px;
   margin-bottom: 80px;
 
   .ngo-logo {
     float: left;
     margin-bottom: 10px;
+    margin-right: 10px;
     width: 250px;
     // height: 100px;
   }
@@ -40,6 +42,10 @@ h2 {
   .ngo-body {
     margin-top: 40px;
   }
+
+  h3 {
+    margin-top: 0;
+  }
 }
 
 .participants-title {
@@ -50,6 +56,10 @@ h2 {
   padding: 0px 20px;
   img {
     margin: 10px;
+  }
+
+  .btn {
+  margin: 10px;
   }
 }
 

@@ -6,20 +6,20 @@ $blue: #437C90; // SHOULD BE AVOIDED
 $yellow: #FFFF82; // SHOULD BE AVOIDED
 $orange: #E27E44; // SHOULD BE AVOIDED
 $green: #D6E681; // SHOULD BE AVOIDED
-$gray: #393E41;
-$light-gray: #EFEFEF;
-$dark-gray: #A8A8A8;
+$gray: #7F7F7F;
+$lighter-gray: #EFEFEF;
+$light-gray: #C4C4C4;
+$dark-gray: #393E41;
 $black: #0D1B1E;
 $white: #F9F9F9;
 $button-green: #24AD24;
 
 // Color Pallete:
 $light-primary-color: $white;
-$primary-color: $light-gray;
+$primary-color: $lighter-gray;
 $dark-primary-color: $dark-gray;
 $accent-color: $red;
 
 // Text color
 $primary-text: $black;
 $secondary-text: $dark-gray;
-$divider-color: $light-gray;
