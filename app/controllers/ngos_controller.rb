@@ -39,6 +39,6 @@ class NgosController < ApplicationController
   private
 
   def ngo_params
-    params.require(:restaurant).permit(:name, :responsible, :mini_description, :full_description, :phone, :address, :purpose, :website, :facebook, :email, :password)
+    params.require(:ngo).permit(:name, :responsible, :mini_description, :full_description, :phone, :address, :purpose, :website, :facebook, :email, :password)
   end
 end

@@ -12,6 +12,7 @@ class VolunteersController < ApplicationController
 
   def create
     @volunteer = Volunteer.new(volunteer_params)
+    @volunteer.user = current_user
     if @volunteer.save
       redirect_to volunteers_path
     else
