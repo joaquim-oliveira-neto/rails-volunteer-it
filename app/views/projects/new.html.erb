@@ -1,24 +1,25 @@
-<div class="container mb-40">
-  <div class="card-confirm text-left">
-    <div class="col-xs-12 col-sm-5 col-sm-offset-3 ">
-      <h2 class="text-center">Need some help? </h2>
-      <h2 class="text-center">Create a project! </h2>
-      <%= simple_form_for @project do |f| %>
-        <%= f.input :name, label: "What is the project\'s name?" %>
-        <%= f.input :mini_description, label: 'Describe what you need the project get done!'  %>
-        <%= f.input :skills, label: 'Select one of the skills you think it will be necessaty for this project',
-          prompt: "-- select one --",
-          collection: Project::SKILLS %>
-        <%= f.input :remote, label: 'Can it be done remotly?',
-          prompt: "-- select one --",
-          collection: Project::REMOTE %>
-        <div class="text-center">
-          <%= f.button :submit, class: "btn btn-primary"%>
-        </div>
-      <% end %>
+<div id="form">
+  <div class="container mb-40">
+    <div class="card-confirm text-left">
+      <div class="col-xs-12 col-sm-5 col-sm-offset-3 ">
+        <h2 class="text-center">Precisa de ajuda?</h2>
+        <h4 class="text-center">Crie um projeto para que outros possam te ajudar!</h4>
+        <%= simple_form_for @project do |f| %>
+          <%= f.input :name, label: false, placeholder: "Nome do Projeto." %>
+          <%= f.input :mini_description, label: false, placeholder: "Descreva seu problema aqui."  %>
+          <p><%= f.input :skills, label: 'Qual o foco deste projeto?',
+            prompt: "-- Selecione um --",
+            collection: Project::SKILLS,
+            class: "dropdown-text" %></p>
+          <%= f.input :remote, label: 'Trabalho presencial ou remoto?',
+            prompt: "-- Selecione um --",
+            collection: Project::REMOTE,
+            class: "dropdown-text" %>
+          <div class="text-center">
+            <%= f.button :submit, "Criar Projeto", class: "btn btn-primary"%>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-
-
-
