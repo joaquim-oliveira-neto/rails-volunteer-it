@@ -25,7 +25,11 @@ gem 'forgery', '0.6.0' # Generator of Loren Ipsum text
 gem "coffee-rails" # required: google maps
 gem "gmaps4rails" # Google maps map
 
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
+
 gem "letter_opener", group: :development # email sender test
+
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore" #required: google maps

@@ -14,4 +14,18 @@ module ApplicationHelper
       action == :index ? ngos_path : edit_ngo_path(current_user.ngo)
     end
   end
+
+  def volunteer_or_ngo
+    current_user.volunteer.present? ? current_user.volunteer : current_user.ngo
+
+  end
+
+  def user_photo
+    if volunteer_or_ngo.photo.present?
+      cl_image_path volunteer_or_ngo.photo
+    else
+      current_user.facebook_picture_url + "&widht=300&height=300" || "user_image_300x300.png"
+    end
+  end
+
 end
