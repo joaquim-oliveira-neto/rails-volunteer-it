@@ -19,6 +19,9 @@ gem 'devise'
 gem "geocoder" # Geocode
 gem 'omniauth-facebook' # Facebook connection
 
+gem 'faker' # To populate the db with fake seeds
+gem 'forgery', '0.6.0' # Generator of Loren Ipsum text
+
 gem "coffee-rails" # required: google maps
 gem "gmaps4rails" # Google maps map
 
