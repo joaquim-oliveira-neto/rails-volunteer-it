@@ -15,7 +15,7 @@
       <% end %>
 
       <!-- Links when logged in as a volunteer or as a ngo-->
-      <%= link_to "My Projects", volunteer_or_ngo_path(:index), class: "navbar-volunteer-item navbar-volunteer-link" %>
+      <%= link_to "Meus Projetos", volunteer_or_ngo_path(:index), class: "navbar-volunteer-item navbar-volunteer-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-volunteer-item">
@@ -24,7 +24,7 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-volunteer-dropdown-menu">
             <li>
               <%= link_to volunteer_or_ngo_path(:edit) do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Perfil") %>
               <% end %>
             </li>
             <li>
