@@ -1,6 +1,6 @@
-<%= link_to project_path(project) do %>
-  <div class="col-xs-8 col-xs-offset-2">
+ <div class="col-xs-8 col-xs-offset-2">
     <div class="card-project">
+      <%= link_to project_path(project) do %>
       <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-3">
           <div class="card-banner">
@@ -29,7 +29,8 @@
             <p><%= project.skills %></p>
           </div>
         </div>
-      </div>
+       </div>
+      <% end %>
     </div>
   </div>
-<% end %>
+

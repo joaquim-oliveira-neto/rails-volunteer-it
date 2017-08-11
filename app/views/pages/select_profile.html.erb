@@ -1,10 +1,19 @@
 <div class="wrapper">
-  <div class="container select-profile">
-    <div>
-      <%= link_to "Be a volunteer",  new_volunteer_path, class: "btn btn-primary" %>
-    </div>
-    <div>
-      <%= link_to "Add your NGO", new_ngo_path, class: "btn btn-primary" %>
+  <div class="container">
+    <div id="select-profile">
+      <div class="cards">
+        <%= link_to new_volunteer_path do %>
+          <div class="card" style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= asset_url('be-a-volunteer.jpg') %>')">
+            <h3>Seja um Voluntário!</h3>
+          </div>
+        <% end %>
+
+        <%= link_to new_ngo_path do %>
+        <div class="card"  style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= asset_url('register-ong.jpg') %>')">
+          <h3>Cadastre sua ONG</h3>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
