@@ -1,24 +1,24 @@
-
-<div class="container">
-  <div class="row">
-    <div class="ngo-create">
-      <div class="ngo-registration  text-center">
-        <h1>Olá</h1>
-        <h2>Vamos começar com a criação da sua ONG.</h2>
-        <%= simple_form_for [@ngo] do |f| %>
-          <%= f.input :name, label: false, placeholder: "Nome da ONG" %>
-          <%= f.input :address, label: false, placeholder: "Endereço" %>
-          <%= f.input :purpose, label: false, placeholder: "Selecione Causa", as: :select, collection: ["Capacitação Profissional", "Consumo Consciente", "Cultura, Esporte e Arte", "Defesa de Direitos", "Educação", "Idosos", "Meio Ambiente", "Participação Cidadã",
-            "Proteção Animal", "Pessoas com Deficiência"]%>
-          <%= f.input :phone, label: false, placeholder: "Telefone" %>
-          <%= f.input :full_description, label: false, placeholder: "Descrição completa da ONG", :input_html => {:rows => 6}  %>
-          <%= f.submit "Criar Conta", class: "btn btn-primary" %>
-        <% end %>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="ngo-create">
+        <div class="ngo-registration  text-center">
+          <h1>Olá</h1>
+          <h2>Vamos começar com a criação da sua ONG.</h2>
+          <%= simple_form_for [@ngo] do |f| %>
+            <%= f.input :name, label: false, placeholder: "Nome da ONG" %>
+            <%= f.input :address, label: false, placeholder: "Endereço" %>
+            <%= f.input :purpose, label: false, placeholder: "Selecione Causa", as: :select, collection: ["Capacitação Profissional", "Consumo Consciente", "Cultura, Esporte e Arte", "Defesa de Direitos", "Educação", "Idosos", "Meio Ambiente", "Participação Cidadã",
+              "Proteção Animal", "Pessoas com Deficiência"]%>
+            <%= f.input :phone, label: false, placeholder: "Telefone" %>
+            <%= f.input :full_description, label: false, placeholder: "Descrição completa da ONG", :input_html => {:rows => 6}  %>
+            <%= f.submit "Criar Conta", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+         <div class="ngo-registration-pic">
+            <img id="image-create" src="https://images.unsplash.com/photo-1469131792215-9c8aaff71393?dpr=2&auto=format&fit=crop&w=1080&h=720&q=80&cs=tinysrgb&crop=" alt="">
+         </div>
       </div>
-       <div class="ngo-registration-pic">
-          <img id="image-create" src="https://images.unsplash.com/photo-1469131792215-9c8aaff71393?dpr=2&auto=format&fit=crop&w=1080&h=720&q=80&cs=tinysrgb&crop=" alt="">
-       </div>
     </div>
   </div>
 </div>
-
