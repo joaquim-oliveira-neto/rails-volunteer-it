@@ -7,6 +7,14 @@ class Volunteer < ApplicationRecord
 
   validates :first_name, :last_name, :description, presence: true
   validates :user, uniqueness: true
+  after_create :send_welcome_email
+
+
+  private
+
+  def send_welcome_email
+    VolunteerMailer.welcome(self).deliver_now
+  end
 end
 
 

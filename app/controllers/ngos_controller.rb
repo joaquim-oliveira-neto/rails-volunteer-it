@@ -19,7 +19,7 @@ class NgosController < ApplicationController
     @ngo.user = current_user
 
     if @ngo.save
-      UserMailer.welcome(current_user).deliver_now
+      NgoMailer.welcome(User.last).deliver_now
       redirect_to ngos_path
     else
       render :new

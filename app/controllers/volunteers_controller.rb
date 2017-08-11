@@ -15,7 +15,7 @@ class VolunteersController < ApplicationController
     @volunteer.user = current_user
 
     if @volunteer.save
-      UserMailer.welcome(current_user).deliver_now
+      VolunteerMailer.welcome(User.last).deliver_now
       redirect_to volunteers_path
     else
       render :new
