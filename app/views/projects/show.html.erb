@@ -22,15 +22,13 @@
           <div class="ngo-body">
             <p class="text-left"><b>O Projeto</b></p>
 
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur eligendi sint rem, explicabo esse voluptatem quod repellendus consequuntur ullam tempore nostrum autem iste vel, eius, minus necessitatibus culpa dolorum ut.</p>
-
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, ullam, magnam. Iure vel eveniet corporis odio dignissimos non, possimus dolorum, adipisci excepturi accusamus distinctio molestiae repellat. Consectetur, laudantium voluptate quo.<br><br></p>
+            <p class="text"> <%= @project.mini_description %></p>
 
 
             <p class="text-left"><b>Quem somos</b></p>
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur eligendi sint rem, explicabo esse voluptatem quod repellendus consequuntur ullam tempore nostrum autem iste vel, eius, minus necessitatibus culpa dolorum ut.</p>
+            <p class="text"><%= @ngo.full_description %></p>
 
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, ullam, magnam. Iure vel eveniet corporis odio dignissimos non, possimus dolorum, adipisci excepturi accusamus distinctio molestiae repellat. Consectetur, laudantium voluptate quo.</p>
+
           </div>
         </div>
       </div>
@@ -91,9 +89,13 @@
         <p><b>Projetos relacionados</b></p>
         <hr>
         <% @projects.each do |project| %>
-            <div class="card-project col-xs-10 col-xs-offset-1">
-              <%= render 'layouts/card-project', project: project  %>
-            </div>
+          <% if @project.name == project.name %>
+            <% next %>
+          <% else %>
+              <div class="card-project col-xs-10 col-xs-offset-1">
+                <%= render 'layouts/card-project', project: project  %>
+              </div>
+          <% end %>
         <% end %>
       </div>
   </div>

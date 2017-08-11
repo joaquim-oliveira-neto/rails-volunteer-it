@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row">
 
+    <!-- DIV contendo foto e form. Usado para usar CSS flexbox -->
     <div class="ngo-edit-content">
-      <!-- DIV contendo foto e form. Usado para usar CSS flexbox -->
+      <%= simple_form_for [@ngo] do |f| %>
 
 
       <!--DIV contendo foto e upload -->
@@ -27,7 +28,6 @@
             <p><bold>Informações Gerais</bold></p>
             <hr width="40%">
          </div>
-        <%= simple_form_for [@ngo] do |f| %>
             <%= f.input :name, label: false, placeholder: "Nome da ONG" %>
             <%= f.input :address, label: false, placeholder: "Endereço" %>
             <%= f.input :purpose, label: false, placeholder: "Selecione Causa", as: :select, collection: ["Capacitação Profissional", "Consumo Consciente", "Cultura, Esporte e Arte", "Defesa de Direitos", "Educação", "Idosos", "Meio Ambiente", "Participação Cidadã",

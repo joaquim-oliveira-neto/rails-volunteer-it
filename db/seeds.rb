@@ -67,7 +67,6 @@ ngos << ngo7
 
 # CREATE projects
 # 2 projetos por ONG
-Project.destroy_all
 projects = []
 projects << Project.create!(name: "Cantina da Vovó", mini_description: Forgery(:lorem_ipsum).words(10), skills: Project::SKILLS.sample(), remote: true, ngo: ngo0)
 projects << Project.create!(name: "Doação de Sangue Coletiva", mini_description: Forgery(:lorem_ipsum).words(10), skills: Project::SKILLS.sample(), remote: false, ngo: ngo0)
@@ -75,11 +74,6 @@ projects << Project.create!(name: "Doação de Sangue Coletiva", mini_descriptio
 projects << Project.create!(name: "Uber da 3a Idade", mini_description: Forgery(:lorem_ipsum).words(10), skills: Project::SKILLS.sample(), remote: true, ngo: ngo1)
 projects << Project.create!(name: "Colheita Coletiva", mini_description: Forgery(:lorem_ipsum).words(10), skills: Project::SKILLS.sample(), remote: true, ngo: ngo1)
 
-projects << Project.create!(name: "Plantando na Comunidade", mini_description: Forgery(:lorem_ipsum).words(10), skills: Project::SKILLS.sample(), remote: true, ngo: ngo2)
-projects << Project.create!(name: "Grupos de Dança", mini_description: Forgery(:lorem_ipsum).words(10), skills: Project::SKILLS.sample(), remote: true, ngo: ngo2)
-
-projects << Project.create!(name: "Aulas de Surfe para Idosos", mini_description: Forgery(:lorem_ipsum).words(10), skills: Project::SKILLS.sample(), remote: true, ngo: ngo3)
-projects << Project.create!(name: "Fiscalização de Políticos", mini_description: Forgery(:lorem_ipsum).words(10), skills: Project::SKILLS.sample(), remote: true, ngo: ngo3)
 
 projects << Project.create!(name: "Aulas de Economia Gratuitas", mini_description: Forgery(:lorem_ipsum).words(10), skills: Project::SKILLS.sample(), remote: true, ngo: ngo4)
 projects << Project.create!(name: "Fiscalização de Receitas Médicas", mini_description: Forgery(:lorem_ipsum).words(10), skills: Project::SKILLS.sample(), remote: true, ngo: ngo4)
