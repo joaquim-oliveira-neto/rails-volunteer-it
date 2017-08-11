@@ -1,0 +1,53 @@
+.card-project {
+  // height: 175px;
+  max-width: 900px;
+  background-color: white;
+  margin-top: 10px;
+  border: 1px solid #DFE1E0;
+  box-shadow: $card-box-shadow;
+  padding: 20px;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  // align-items: center;
+
+  // Remove all margins to start with
+  h1, h2, h3, h4, p {
+    margin: 0;
+  }
+
+  .card-text {
+    .card-title {
+
+    }
+
+    .card-description{
+
+      p {
+        margin-top: 10px;
+      }
+    }
+  }
+  .card-banner {
+
+  }
+
+
+  .project-local {
+    text-align: left;
+  }
+}
+.card-project:hover {
+  box-shadow: $card-box-shadow-hover;
+  color: $black;
+}
+
+.card-project:nth-last-child(1) {
+  margin-bottom: 3%;
+}
+
+#default-message {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
