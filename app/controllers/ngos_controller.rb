@@ -8,13 +8,6 @@ class NgosController < ApplicationController
 
   def show
     @ngo = Ngo.find(params[:id])
-
-    # # google maps
-    # @hash = Gmaps4rails.build_markers(@ngo) do |ngo, marker|
-    #   marker.lat ngo.latitude
-    #   marker.lng ngo.longitude
-    #   # marker.infowindow render_to_string(partial: "/ngos/map_box", locals: { ngo: ngo })
-    # end
   end
 
   def new
@@ -26,7 +19,8 @@ class NgosController < ApplicationController
     @ngo.user = current_user
 
     if @ngo.save
-      redirect_to ngo_path(@ngo)
+      NgoMailer.welcome(User.last).deliver_now
+      redirect_to ngos_path
     else
       render :new
     end

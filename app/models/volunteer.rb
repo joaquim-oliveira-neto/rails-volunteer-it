@@ -9,6 +9,14 @@ class Volunteer < ApplicationRecord
   validates :user, uniqueness: true
 
   mount_uploader :photo, PhotoUploader
+  after_create :send_welcome_email
+
+  private
+
+  def send_welcome_email
+    VolunteerMailer.welcome(self).deliver_now
+  end
+
 end
 
 

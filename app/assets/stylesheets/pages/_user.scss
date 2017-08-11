@@ -10,4 +10,18 @@
   .link {
     color: $blue;
   }
+
+  .inline-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      text-align: center;
+      font-size: 13px;
+      margin: 0 3%;
+      color: $gray;
+    }
+  }
 }
+

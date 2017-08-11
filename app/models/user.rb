@@ -29,4 +29,7 @@ class User < ApplicationRecord
 
     return user
   end
+
+  private
+
 end

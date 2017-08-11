@@ -1,29 +1,70 @@
 <div class="container">
   <div class="row">
-    <he>
 
-    <div class="ngo-profile-picture">
-      <div class="picture">
+    <div class="ngo-edit-content">
+      <!-- DIV contendo foto e form. Usado para usar CSS flexbox -->
+
+
+      <!--DIV contendo foto e upload -->
+      <div class="ngo-profile-picture col-xs-6">
+         <div class="logo">
+           <p><bold>Logo</bold></p>
+           <hr width="40%">
+         </div>
+          <div>
+            <img src="http://via.placeholder.com/300?text=Placeholder.com+rocks!" alt="">
+          </div>
+          <div>
+            <button id="upload-btn" type="button" class="btn btn-default">Upload Photo</button>
+          </div>
       </div>
-      <div class="edit">
+
+
+
+      <div class="ngo-profile-form col-xs-6">
+        <!-- DIV contendo o form -->
+         <div class="informacoes">
+            <p><bold>Informações Gerais</bold></p>
+            <hr width="40%">
+         </div>
+        <%= simple_form_for [@ngo] do |f| %>
+            <%= f.input :name, label: false, placeholder: "Nome da ONG" %>
+            <%= f.input :address, label: false, placeholder: "Endereço" %>
+            <%= f.input :purpose, label: false, placeholder: "Selecione Causa", as: :select, collection: ["Capacitação Profissional", "Consumo Consciente", "Cultura, Esporte e Arte", "Defesa de Direitos", "Educação", "Idosos", "Meio Ambiente", "Participação Cidadã",
+              "Proteção Animal", "Pessoas com Deficiência"]%>
+            <%= f.input :phone, label: false, placeholder: "Telefone" %>
+            <%= f.input :full_description, label: false, placeholder: "Descrição completa da ONG", :input_html => {:rows => 6}  %>
+            <%= f.input :website, label: false, placeholder: "Website" %>
+            <%= f.input :facebook, label: false, placeholder: "Facebook" %>
+            <%= f.input :responsible, label: false, placeholder: "Responsável pelo projeto" %>
+
+            <%= f.submit "Editar", class: "btn btn-danger" %>
+        <% end %>
       </div>
+     </div>
+
+      <p style="visibility:hidden">Rodrigo</p>
+      <p style="visibility:hidden">Rodrigo</p>
+
+      <p>Projects</p>
+      <hr>
+
+
+            <% if @projects.nil? %>
+                <p id = "default-message" class="text-center">Você ainda não tem projetos. Crie um novo projeto e tenha programadores incríveis na sua equipe</p>
+            <% else %>
+              <% @projects.each do |project| %>
+                  <div class="card-project col-xs-10 col-xs-offset-1">
+                    <%= render 'layouts/card-project', project: project  %>
+                  </div>
+              <% end %>
+            <%end%>
+
+
+          <button id="upload-btn" type="button" class="btn btn-default text-center">Crie um novo projeto</button>
+
     </div>
 
 
-    <div class="ngo-profile-form">
-      <%= simple_form_for [@ngo] do |f| %>
-          <%= f.input :name, label: false, placeholder: "Nome da ONG" %>
-          <%= f.input :address, label: false, placeholder: "Endereço" %>
-          <%= f.input :purpose, label: false, placeholder: "Selecione Causa", as: :select, collection: ["Capacitação Profissional", "Consumo Consciente", "Cultura, Esporte e Arte", "Defesa de Direitos", "Educação", "Idosos", "Meio Ambiente", "Participação Cidadã",
-            "Proteção Animal", "Pessoas com Deficiência"]%>
-          <%= f.input :phone, label: false, placeholder: "Telefone" %>
-          <%= f.input :full_description, label: false, placeholder: "Descrição completa da ONG", :input_html => {:rows => 6}  %>
-          <%= f.input :website, label: false, placeholder: "Website" %>
-          <%= f.input :facebook, label: false, placeholder: "Facebook" %>
-          <%= f.input :responsible, label: false, placeholder: "Facebook" %>
-
-          <%= f.submit "Criar Conta", class: "btn btn-primary" %>
-      <% end %>
     </div>
-  </div>
 </div>

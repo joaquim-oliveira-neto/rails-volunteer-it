@@ -1,5 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.action_mailer.delivery_method = :smtp
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -84,5 +85,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'volunteer-it.herokuapp.com/'}
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 } ~> Teste em localhost
+  config.action_mailer.default_url_options = { host: "volunteer-it.herokuapp.com" } # ~> URL do projeto em development
 end

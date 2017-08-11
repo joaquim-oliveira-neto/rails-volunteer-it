@@ -11,7 +11,10 @@
 <hr>
 
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Entrar", new_session_path(resource_name), class: "btn btn-primary" %>
+  <div class="text-center">
+    <span>Já possui uma conta?</span>
+    <%= link_to "Entrar", new_session_path(resource_name), class: "link" %>
+  </div>
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
