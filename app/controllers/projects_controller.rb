@@ -73,11 +73,9 @@ class ProjectsController < ApplicationController
     match.project = @project
 
     ngo = Ngo.find(@project.ngo_id)
-    volunteer = Volunteer.find(Match.last.volunteer_id)
 
     if match.save!
-      UserMailer.welcome_project(ngo, match, volunteer).deliver_now
-      UserMailer.welcome_project_volunteer(ngo, match, volunteer).deliver_now
+      UserMailer.welcome_project(User.find(ngo.user)).deliver_now
       redirect_to @project
     else
       redirect_to root_path
