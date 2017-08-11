@@ -1,64 +1,48 @@
 <div class="container">
-
   <div class="row">
 
     <!-- DIV contendo foto e form. Usado para usar CSS flexbox -->
     <div class="ngo-edit-content">
-
-        <%= simple_form_for [@volunteer] do |f| %>
-          <!--DIV contendo foto e upload -->
-          <div class="ngo-profile-picture col-xs-6">
-             <div class="logo">
-               <p><bold>Logo</bold></p>
-               <hr width="54.3%">
-             </div>
-
-              <div>
-                <%= image_tag user_photo, height: 300, width: 300 %>
-              </div>
-
-              <div>
-                <%= f.input :photo %>
-                <%= f.input :photo_cache, as: :hidden %>
-              </div>
-          </div>
-
-          <!-- DIV contendo o form -->
-          <div class="ngo-profile-form col-xs-6">
-             <div class="informacoes">
-                <p><bold>Informações Gerais</bold></p>
-                <hr width="100%">
-             </div>
-                <%= f.input :first_name, label: false, placeholder: "Nome" %>
-                <%= f.input :last_name, label: false, placeholder: "Sobrenome" %>
-                <%= f.input :address, label: false, placeholder: "Endereço" %>
-                <%= f.input :description, label: false, placeholder: "Descrição sobre você", :input_html => {:rows => 6}  %>
-
-                <%= f.submit "Salvar alterações", class: "btn btn-danger" %>
-        <% end %>
-      </div>
-     </div>
-
-      <p style="visibility:hidden">Rodrigo</p>
-      <p style="visibility:hidden">Rodrigo</p>
-
-      <p>Seus Projetos</p>
-      <hr>
-
-
-      <% if @volunteer.projects.nil? %>
-          <p id = "default-message" class="text-center">Você ainda não participa de nenhum projeto</p>
-      <% else %>
-        <% @volunteer.projects.each do |project| %>
-            <div class="card-project col-xs-10 col-xs-offset-1">
-              <%= render 'layouts/card-project', project: project  %>
+      <%= simple_form_for [@volunteer] do |f| %>
+        <!--DIV contendo foto e upload -->
+        <div class="ngo-profile-picture col-xs-6">
+           <div class="logo">
+             <p><bold>Logo</bold></p>
+             <hr width="54.3%">
+           </div>
+            <div>
+              <%= image_tag user_photo, height: 300, width: 300 %>
             </div>
-        <% end %>
-      <%end%>
-
-
-
+            <div>
+              <%= f.input :photo %>
+              <%= f.input :photo_cache, as: :hidden %>
+            </div>
+        </div>
+        <div class="ngo-profile-form col-xs-6">
+          <div class="informacoes">
+            <p><bold>Informações Gerais</bold></p>
+            <hr width="100%">
+          </div>
+          <%= f.input :first_name, label: false, placeholder: "Nome" %>
+          <%= f.input :last_name, label: false, placeholder: "Sobrenome" %>
+          <%= f.input :address, label: false, placeholder: "Endereço" %>
+          <%= f.input :description, label: false, placeholder: "Descrição sobre você", :input_html => {:rows => 6}  %>
+          <%= f.submit "Salvar alterações", class: "btn btn-danger" %>
+        </div>
+      <% end %>
     </div>
-    </div>
-
+    <p style="visibility:hidden">Rodrigo</p>
+    <p style="visibility:hidden">Rodrigo</p>
+    <p>Seus Projetos</p>
+    <hr>
+    <% if @volunteer.projects.nil? %>
+        <p id = "default-message" class="text-center">Você ainda não participa de nenhum projeto</p>
+    <% else %>
+      <% @volunteer.projects.each do |project| %>
+          <div class="card-project col-xs-10 col-xs-offset-1">
+            <%= render 'layouts/card-project', project: project  %>
+          </div>
+      <% end %>
+    <%end%>
+  </div>
 </div>
