@@ -20,7 +20,7 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-volunteer-item">
         <div class="dropdown">
-          <%= image_tag user_photo, class: "avatar dropdown-toggle", id: "navbar-volunteer-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag user_photo(current_user), class: "avatar dropdown-toggle", id: "navbar-volunteer-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-volunteer-dropdown-menu">
             <li>
               <%= link_to volunteer_or_ngo_path(:edit) do %>
