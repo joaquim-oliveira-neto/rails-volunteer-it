@@ -1,7 +1,7 @@
 module ApplicationHelper
   def volunteer_or_ngo_signed_in?
     if user_signed_in?
-      (current_user.ngo.present? || current_user.volunteer.present?) ? true : false
+      (current_user.ngo.present? && current_user.ngo.id.present? || current_user.volunteer.present? && current_user.volunteer.id.present?)
     else
       false
     end

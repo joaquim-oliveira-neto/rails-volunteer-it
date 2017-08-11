@@ -8,7 +8,7 @@
           <%= simple_form_for [@ngo] do |f| %>
             <%= f.input :name, label: false, placeholder: "Nome da ONG" %>
             <%= f.input :address, label: false, placeholder: "Endereço" %>
-            <%= f.input :purpose, label: false, placeholder: "Selecione Causa", as: :select, collection: ["Capacitação Profissional", "Consumo Consciente", "Cultura, Esporte e Arte", "Defesa de Direitos", "Educação", "Idosos", "Meio Ambiente", "Participação Cidadã",
+            <%= f.input :purpose, label: false, as: :select, collection: ["Capacitação Profissional", "Consumo Consciente", "Cultura, Esporte e Arte", "Defesa de Direitos", "Educação", "Idosos", "Meio Ambiente", "Participação Cidadã",
               "Proteção Animal", "Pessoas com Deficiência"]%>
             <%= f.input :phone, label: false, placeholder: "Telefone" %>
             <%= f.input :full_description, label: false, placeholder: "Descrição completa da ONG", :input_html => {:rows => 6}  %>
