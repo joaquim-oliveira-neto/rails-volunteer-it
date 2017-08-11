@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @ngo = Ngo.find(@project.ngo_id)
+    @ngo = @project.ngo
     @projects = @ngo.projects
     @ngo_coordinates = { lat: @ngo.latitude, lng: @ngo.longitude }
 

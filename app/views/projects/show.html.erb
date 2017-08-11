@@ -7,8 +7,7 @@
         <div class="info">
           <div class="row">
             <div class="col-xs-12 col-md-5">
-              <%= image_tag user_photo(project.ngo.user), height: 350, width: 350, class: "ngo-logo img-resposive" %>
-              <!-- <img class="ngo-logo" src="https://source.unsplash.com/350x350/?nature,water" alt="Ngo Project" class="img-resposive"> -->
+              <%= image_tag user_photo(@project.ngo.user), class: "ngo-logo img-resposive" %>
             </div>
 
             <div class="col-xs-12 col-md-7  ">
@@ -42,16 +41,20 @@
         <div class="participants-body">
           <div class="row volunteers">
             <div class="col-xs-12 volunteers-images">
+              <% @project.volunteers.each do |volunteer| %>
+
+                <%= image_tag user_photo(volunteer.user), class: "img-circle img-thumbnail avatar-projects" %>
+              <% end %>
+              <!-- <img src="http://via.placeholder.com/50x50" alt="Volunteer" class="img-circle img-thumbnail">
               <img src="http://via.placeholder.com/50x50" alt="Volunteer" class="img-circle img-thumbnail">
-              <img src="http://via.placeholder.com/50x50" alt="Volunteer" class="img-circle img-thumbnail">
-              <img src="http://via.placeholder.com/50x50" alt="Volunteer" class="img-circle img-thumbnail">
+              <img src="http://via.placeholder.com/50x50" alt="Volunteer" class="img-circle img-thumbnail"> -->
             </div>
-            <div class="col-xs-12 volunteers-images">
+            <!-- <div class="col-xs-12 volunteers-images">
               <img src="http://via.placeholder.com/50x50" alt="Volunteer" class="img-circle img-thumbnail">
               <img src="http://via.placeholder.com/50x50" alt="Volunteer" class="img-circle img-thumbnail">
               <img src="http://via.placeholder.com/50x50" alt="Volunteer" class="img-circle img-thumbnail">
-            </div>
-            <% if current_user.present? %>
+            </div> -->
+            <% if current_user.volunteer.present? %>
               <div class="col-xs-12">
                 <%=  link_to "Quero participar", match_volunteer_project_project_path, class: "btn btn-primary participe" %>
               </div>
