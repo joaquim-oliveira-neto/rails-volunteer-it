@@ -1,15 +1,7 @@
 <div class="container">
   <div class="col-xs-4 col-xs-offset-4">
 
-      <% if volunteer_or_ngo.photo.present? %>
-        <% avatar_url = cl_image_path volunteer_or_ngo.photo %>
-      <% else %>
-        <% avatar_url = current_user.facebook_picture_url || 'logo.png' %>
-      <% end %>
-
-      <%= image_tag avatar_url, height: 50, width: 50  %>
-
-
+      <%= image_tag user_photo, height: 50, width: 50  %>
 
       <h3>Roro está trabalhando no layout dessa página</h3>
 
