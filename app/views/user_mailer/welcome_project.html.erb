@@ -1,1 +1,11 @@
-<p>Uhul! Tem um voluntário querendo te ajudar!!!! </p>
+<div class="container">
+  <h3>Hey <%= @ngo.name %>! Tem um voluntário interessado em desenvolver o seu proejto!</h3>
+  <hr>
+  <p>Dados do voluntário: </p>
+  <p><%= @volunteer.first_name %> <%= @volunteer.last_name %></p>
+  <p>Mensagem do voluntário:</p>
+  <p><%= @match.description %></p>
+  <p></p>
+  <p>Email: <%= @volunteer.user.email %></p>
+</div>
+
