@@ -22,9 +22,12 @@ module ApplicationHelper
 
   def user_photo
     if volunteer_or_ngo.photo.present?
-      cl_image_path volunteer_or_ngo.photo
+      cl_image_path volunteer_or_ngo.photo, transformation: [
+        {width: 300, height: 300, gravity: "face"}, {width:300, crop:"scale"}]
+    elsif current_user.facebook_picture_url.present?
+      current_user.facebook_picture_url + "&widht=300&height=300"
     else
-      current_user.facebook_picture_url + "&widht=300&height=300" || "user_image_300x300.png"
+      "user_image_300x300.png"
     end
   end
 
