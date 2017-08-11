@@ -23,6 +23,8 @@ class VolunteersController < ApplicationController
   end
 
   def edit
+    @projects = current_user.volunteer.projects
+
   end
 
   def update
