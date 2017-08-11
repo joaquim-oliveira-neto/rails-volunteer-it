@@ -67,7 +67,6 @@ ngos << ngo7
 
 # CREATE projects
 # 2 projetos por ONG
-Project.destroy_all
 projects = []
 projects << Project.create!(name: "Cantina da Vovó", mini_description: Forgery(:lorem_ipsum).words(10), skills: Project::SKILLS.sample(), remote: true, ngo: ngo0)
 projects << Project.create!(name: "Doação de Sangue Coletiva", mini_description: Forgery(:lorem_ipsum).words(10), skills: Project::SKILLS.sample(), remote: false, ngo: ngo0)

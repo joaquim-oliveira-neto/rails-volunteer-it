@@ -3,6 +3,12 @@
   padding-bottom: 40px;
 }
 
+.wrapper {
+  // background-color: #EFEFEF; //Don't overwrite background color!
+  width: 100%;
+  min-height: 100vh;
+}
+
 .vertical-margin {
   margin-top: 20px;
   margin-bottom: 20px;

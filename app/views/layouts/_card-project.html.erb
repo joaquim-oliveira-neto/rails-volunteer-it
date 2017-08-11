@@ -1,16 +1,35 @@
-<div class="picture-and-description">
-  <div class="project-pic">
-    <img src="http://lorempixel.com/400/200/" alt="">
-  </div>
-  <div class="project-description">
-    <h2><%= link_to project.name, project_path(project) %></h2>
-    <p id="ong-name"><%= project.ngo.name %></p>
-    <p><%= project.mini_description[0...100] + "..." %></p>
-  </div>
-</div>
-<div class="project-local">
-  <p>Skills</p>
-  <p class="btn btn-default"><%= link_to project.skills.upcase, project_path(project) %></p>
-</div>
+<%= link_to project_path(project) do %>
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="card-project">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3">
+          <div class="card-banner">
+            <div class="project-pic">
+              <img src="http://lorempixel.com/150/150/" alt="">
+            </div>
+          </div>
+        </div>
 
+        <div class="col-xs-12 col-sm-8 col-md-7">
+          <div class="card-text">
+            <div class="card-title">
+              <h4><b><%= project.name %></b></h4>
+              <p><%= project.ngo.name %></p>
+            </div>
 
+            <div class="card-description">
+              <p><%= project.mini_description[0...100] + "..." %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-2">
+          <div class="project-local">
+            <p><b>Skills</b></p>
+            <p><%= project.skills %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
