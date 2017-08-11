@@ -27,10 +27,19 @@ class NgosController < ApplicationController
   end
 
   def edit
-    @ngo = Ngo.find(params[:id])
+    @projects = current_user.ngo.projects
+    @ngo = current_user.ngo
   end
 
   def update
+    @ngo = current_user.ngo
+    @projects = current_user.ngo.projects
+
+    if @ngo.update(ngo_params)
+      redirect_to ngos_path
+    else
+      render :edit
+    end
   end
 
   def destroy
