@@ -11,10 +11,8 @@ class VolunteersController < ApplicationController
   end
 
   def create
-
     @volunteer = Volunteer.new(volunteer_params)
     @volunteer.user = current_user
-
     if @volunteer.save
       VolunteerMailer.welcome(@volunteer).deliver_now
       redirect_to volunteers_path
@@ -24,8 +22,6 @@ class VolunteersController < ApplicationController
   end
 
   def edit
-    @projects = current_user.volunteer.projects
-
   end
 
   def update
