@@ -11,12 +11,17 @@
 <hr>
 
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Entrar", new_session_path(resource_name), class: "btn btn-primary" %>
+  <div class="text-center">
+    <span>Já possui uma conta?</span>
+    <%= link_to "Entrar", new_session_path(resource_name), class: "link" %>
+  </div>
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <span>Não possui uma conta?</span>
-  <%= link_to "Cadastre-se", new_registration_path(resource_name), class: "link" %>
+  <%= link_to "Cadastre sua ONG", new_user_registration_path(redirect_to: new_ngo_path), class: "link" %>
+  <span> ou </span>
+  <%= link_to "Seja um voluntário", new_user_registration_path(redirect_to: new_volunteer_path), class: "link" %>
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
