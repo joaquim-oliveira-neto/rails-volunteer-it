@@ -24,7 +24,7 @@ module ApplicationHelper
     if volunteer_or_ngo.photo.present?
       cl_image_path volunteer_or_ngo.photo
     else
-      current_user.facebook_picture_url || "user_image_300x300.png"
+      current_user.facebook_picture_url + "&widht=300&height=300" || "user_image_300x300.png"
     end
   end
 
