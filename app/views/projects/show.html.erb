@@ -7,15 +7,16 @@
         <div class="info">
           <div class="row">
             <div class="col-xs-12 col-md-5">
-              <%= image_tag user_photo(@project.ngo.user), class: "ngo-logo img-resposive" %>
-              <div class="col-xs-12 col-md-7  ">
-                <div class="ngo-title">
-                  <h3>Projeto: <%= @project.name %></h3>
-                  <p>ONG: <%= @ngo.name %></p>
-                  <p>Endereço: <%= @ngo.address %></p>
-                </div>
+            <%= image_tag user_photo(@project.ngo.user), class: "ngo-logo img-resposive" %>
+            </div>
+            <div class="col-xs-12 col-md-7  ">
+              <div class="ngo-title">
+                <h3>Projeto: <%= @project.name %></h3>
+                <p>ONG: <%= @ngo.name %></p>
+                <p>Endereço: <%= @ngo.address %></p>
               </div>
             </div>
+
           </div>
 
           <div class="ngo-body">
