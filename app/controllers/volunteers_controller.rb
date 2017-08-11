@@ -13,7 +13,9 @@ class VolunteersController < ApplicationController
   def create
     @volunteer = Volunteer.new(volunteer_params)
     @volunteer.user = current_user
+
     if @volunteer.save
+      VolunteerMailer.welcome(User.last).deliver_now
       redirect_to volunteers_path
     else
       render :new

@@ -56,12 +56,6 @@ class ProjectsController < ApplicationController
       @projects = Project.select{|p| p.ngo.purpose == params[:purpose]}
     end
 
-    @ngos = Ngo.where.not(latitude: nil, longitude: nil)
-
-    @hash = Gmaps4rails.build_markers(@ngos) do |ngo, marker|
-    marker.lat ngo.latitude
-    marker.lng ngo.longitude
-    end
   end
 
 

@@ -19,8 +19,10 @@ gem 'devise'
 gem "geocoder" # Geocode
 gem 'omniauth-facebook' # Facebook connection
 
-gem "coffee-rails" #required: google maps
+gem "coffee-rails" # required: google maps
 gem "gmaps4rails" # Google maps map
+
+gem "letter_opener", group: :development # email sender test
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore" #required: google maps
