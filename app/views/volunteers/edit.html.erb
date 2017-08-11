@@ -1,15 +1,62 @@
 <div class="container">
-  <div class="col-xs-4 col-xs-offset-4">
-      <h3>Roro está trabalhando no layout dessa página</h3>
+  <div class="row">
 
-      <%= simple_form_for @volunteer do |f| %>
-        <%= f.input :first_name, label: false, placeholder: "Nome" %>
-        <%= f.input :last_name, label: false, placeholder: "Sobrenome" %>
-        <%= f.input :address, label: false, placeholder: "Endereço" %>
-        <%= f.input :description, label: false, placeholder: "Breve descrição sobre você" %>
-        <div class="text-center">
-          <%= f.submit "Salvar alterações", class: "btn btn-primary" %>
-        </div>
-      <% end %>
-  </div>
+    <div class="ngo-edit-content">
+      <!-- DIV contendo foto e form. Usado para usar CSS flexbox -->
+
+
+      <!--DIV contendo foto e upload -->
+      <div class="ngo-profile-picture col-xs-6">
+         <div class="logo">
+           <p><bold>Logo</bold></p>
+           <hr width="40%">
+         </div>
+          <div>
+            <img src="http://via.placeholder.com/300?text=Placeholder.com+rocks!" alt="">
+          </div>
+          <div>
+            <button type="button" class="btn btn-default">Upload Photo</button>
+          </div>
+      </div>
+
+
+
+      <div class="ngo-profile-form col-xs-6">
+        <!-- DIV contendo o form -->
+         <div class="informacoes">
+            <p><bold>Informações Gerais</bold></p>
+            <hr width="40%">
+         </div>
+        <%= simple_form_for [@volunteer] do |f| %>
+            <%= f.input :first_name, label: false, placeholder: "Nome" %>
+            <%= f.input :last_name, label: false, placeholder: "Sobrenome" %>
+            <%= f.input :address, label: false, placeholder: "Endereço" %>
+            <%= f.input :description, label: false, placeholder: "Descrição sobre você", :input_html => {:rows => 6}  %>
+
+            <%= f.submit "Editar", class: "btn btn-danger" %>
+        <% end %>
+      </div>
+     </div>
+
+      <p style="visibility:hidden">Rodrigo</p>
+      <p style="visibility:hidden">Rodrigo</p>
+
+      <p>Seus Projetos</p>
+      <hr>
+
+
+      <% if @projects.nil? %>
+          <p id = "default-message" class="text-center">Você ainda não participa de nenhum projeto</p>
+      <% else %>
+        <% @projects.each do |project| %>
+            <div class="card-project col-xs-10 col-xs-offset-1">
+              <%= render 'layouts/card-project', project: project  %>
+            </div>
+        <% end %>
+      <%end%>
+
+
+
+    </div>
+    </div>
 </div>

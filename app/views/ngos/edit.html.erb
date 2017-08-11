@@ -15,7 +15,7 @@
             <img src="http://via.placeholder.com/300?text=Placeholder.com+rocks!" alt="">
           </div>
           <div>
-            <button id="upload-btn" type="button" class="btn btn-default">Upload Photo</button>
+            <button type="button" class="btn btn-default">Upload Photo</button>
           </div>
       </div>
 
@@ -60,11 +60,11 @@
         <% end %>
       <%end%>
 
-
-     <button id="upload-btn" type="button" class="btn btn-default text-center">Crie um novo projeto</button>
+     <ul>
+       <li><%= link_to "Crie um novo projeto", new_project_path, id: "upload-btn" , class: "btn btn-default col-xs-4 col-xs-offset-4" %></li>
+     </ul>
+    <!--<button id="upload-btn" type="button" class="btn btn-default col-xs-4 col-xs-offset-4">Crie um novo projeto</button> -->
 
     </div>
-
-
     </div>
 </div>
