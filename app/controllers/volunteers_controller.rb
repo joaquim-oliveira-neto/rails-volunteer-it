@@ -11,18 +11,11 @@ class VolunteersController < ApplicationController
   end
 
   def create
-    # @volunteer = Volunteer.new(volunteer_params)
-    # @volunteer.user = current_user
-    # if @volunteer.save
-    #   redirect_to volunteers_path
-    # else
-    #   render :new
-    # end
-
-    @volunteer = current_user.volunteers.build(volunteer_params)
+    @volunteer = Volunteer.new(volunteer_params)
+    @volunteer.user = current_user
 
     if @volunteer.save
-      UserMailer.creation_confirmation(@volunteer).deliver_now
+      UserMailer.welcome(current_user).deliver_now
       redirect_to volunteers_path
     else
       render :new

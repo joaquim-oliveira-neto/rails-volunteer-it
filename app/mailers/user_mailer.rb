@@ -1,14 +1,5 @@
 class UserMailer < ApplicationMailer
 
-  def creation_confirmation(user)
-    @user = user
-
-    mail(
-      to:       @user.email,
-      subject:  "#{@user.email} created!"
-    )
-  end
-
   def welcome(user)
     @user = user  # Instance variable => available in view
 

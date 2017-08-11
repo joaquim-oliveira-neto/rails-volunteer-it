@@ -15,27 +15,15 @@ class NgosController < ApplicationController
   end
 
   def create
-
-    @ngo = current_user.ngos.build(ngo_params)
+    @ngo = Ngo.new(ngo_params)
+    @ngo.user = current_user
 
     if @ngo.save
-      UserMailer.creation_confirmation(@ngo).deliver_now
+      UserMailer.welcome(current_user).deliver_now
       redirect_to ngos_path
     else
       render :new
     end
-
-    # # redirect_to ngo_path(@ngo)
-
-    # @volunteer = current_user.volunteers.build(volunteer_params)
-
-    # if @volunteer.save
-    #   UserMailer.creation_confirmation(@volunteer).deliver_now
-    #   redirect_to volunteers_path
-    # else
-    #   render :new
-    # end
-
   end
 
   def edit
