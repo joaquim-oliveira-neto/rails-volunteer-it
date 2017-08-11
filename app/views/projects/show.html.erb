@@ -43,6 +43,7 @@
                 <%= image_tag user_photo(volunteer.user), class: "img-circle img-thumbnail avatar-projects" %>
               <% end %>
             </div>
+
             <% if current_user.volunteer.present? %>
               <div class="col-xs-12">
                 <%=  link_to "Quero participar", match_volunteer_project_project_path, class: "btn btn-primary participe" %>
