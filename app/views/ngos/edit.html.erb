@@ -4,67 +4,54 @@
     <!-- DIV contendo foto e form. Usado para usar CSS flexbox -->
     <div class="ngo-edit-content">
       <%= simple_form_for [@ngo] do |f| %>
-
-
       <!--DIV contendo foto e upload -->
-      <div class="ngo-profile-picture col-xs-6">
-         <div class="logo">
-           <p><bold>Logo</bold></p>
-           <hr width="40%">
-         </div>
-          <div>
-            <img src="http://via.placeholder.com/300?text=Placeholder.com+rocks!" alt="">
-          </div>
-          <div>
-            <button type="button" class="btn btn-default">Upload Photo</button>
-          </div>
-      </div>
-
-
-
-      <div class="ngo-profile-form col-xs-6">
-        <!-- DIV contendo o form -->
-         <div class="informacoes">
-            <p><bold>Informações Gerais</bold></p>
-            <hr width="40%">
-         </div>
-            <%= f.input :name, label: false, placeholder: "Nome da ONG" %>
-            <%= f.input :address, label: false, placeholder: "Endereço" %>
-            <%= f.input :purpose, label: false, placeholder: "Selecione Causa", as: :select, collection: ["Capacitação Profissional", "Consumo Consciente", "Cultura, Esporte e Arte", "Defesa de Direitos", "Educação", "Idosos", "Meio Ambiente", "Participação Cidadã",
-              "Proteção Animal", "Pessoas com Deficiência"]%>
-            <%= f.input :phone, label: false, placeholder: "Telefone" %>
-            <%= f.input :full_description, label: false, placeholder: "Descrição completa da ONG", :input_html => {:rows => 6}  %>
-            <%= f.input :website, label: false, placeholder: "Website" %>
-            <%= f.input :facebook, label: false, placeholder: "Facebook" %>
-            <%= f.input :responsible, label: false, placeholder: "Responsável pelo projeto" %>
-
-            <%= f.submit "Editar", class: "btn btn-danger" %>
-        <% end %>
-      </div>
-     </div>
-
-      <p style="visibility:hidden">Rodrigo</p>
-      <p style="visibility:hidden">Rodrigo</p>
-
-      <p>Seus Projetos</p>
-      <hr>
-
-
-      <% if @projects.nil? %>
-          <p id = "default-message" class="text-center">Você ainda não tem projetos. Crie um novo projeto e tenha programadores incríveis na sua equipe</p>
-      <% else %>
-        <% @projects.each do |project| %>
-            <div class="card-project col-xs-10 col-xs-offset-1">
-              <%= render 'layouts/card-project', project: project  %>
+        <div class="ngo-profile-picture col-xs-6">
+           <div class="logo">
+             <p><bold>Logo</bold></p>
+             <hr width="54.3%">
+           </div>
+            <div>
+              <%= image_tag user_photo, height: 300, width: 300 %>
             </div>
-        <% end %>
-      <%end%>
-
-     <ul>
-       <li><%= link_to "Crie um novo projeto", new_project_path, id: "upload-btn" , class: "btn btn-default col-xs-4 col-xs-offset-4" %></li>
-     </ul>
-    <!--<button id="upload-btn" type="button" class="btn btn-default col-xs-4 col-xs-offset-4">Crie um novo projeto</button> -->
-
+            <div>
+              <%= f.input :photo %>
+              <%= f.input :photo_cache, as: :hidden %>
+            </div>
+        </div>
+        <div class="ngo-profile-form col-xs-6">
+          <div class="informacoes">
+            <p><bold>Informações Gerais</bold></p>
+            <hr width="100%">
+          </div>
+          <%= f.input :name, label: false, placeholder: "Nome da ONG" %>
+          <%= f.input :address, label: false, placeholder: "Endereço" %>
+          <%= f.input :purpose, label: false, placeholder: "Selecione Causa", as: :select, collection: ["Capacitação Profissional", "Consumo Consciente", "Cultura, Esporte e Arte", "Defesa de Direitos", "Educação", "Idosos", "Meio Ambiente", "Participação Cidadã",
+            "Proteção Animal", "Pessoas com Deficiência"]%>
+          <%= f.input :phone, label: false, placeholder: "Telefone" %>
+          <%= f.input :full_description, label: false, placeholder: "Descrição completa da ONG", :input_html => {:rows => 6}  %>
+          <%= f.input :website, label: false, placeholder: "Website" %>
+          <%= f.input :facebook, label: false, placeholder: "Facebook" %>
+          <%= f.input :responsible, label: false, placeholder: "Responsável pelo projeto" %>
+          <%= f.submit "Salvar alterações", class: "btn btn-danger" %>
+        </div>
+      <% end %>
     </div>
-    </div>
+    <p style="visibility:hidden">Rodrigo</p>
+    <p style="visibility:hidden">Rodrigo</p>
+    <p>Seus Projetos</p>
+    <hr>
+    <% if @ngo.projects.nil? %>
+        <p id = "default-message" class="text-center">Você ainda não tem projetos. Crie um novo projeto e tenha programadores incríveis na sua equipe</p>
+    <% else %>
+      <% @ngo.projects.each do |project| %>
+          <div class="card-project col-xs-10 col-xs-offset-1">
+            <%= render 'layouts/card-project', project: project  %>
+          </div>
+      <% end %>
+    <%end%>
+   <ul>
+     <li><%= link_to "Crie um novo projeto", new_project_path, id: "upload-btn" , class: "btn btn-default col-xs-4 col-xs-offset-4" %></li>
+   </ul>
+
+  </div>
 </div>
