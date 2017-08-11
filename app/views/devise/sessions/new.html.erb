@@ -24,13 +24,23 @@
               <%= f.button :submit, "Entrar", class: "btn btn-primary" %>
             </div>
           <% end %>
-
-          <hr>
         </div>
 
         <!-- Other Links -->
         <div class="col-xs-6 col-xs-offset-3">
           <div class="text-center">
+
+            <hr>
+            <!-- Facebook Button -->
+            <%- if devise_mapping.omniauthable? %>
+              <%- resource_class.omniauth_providers.each do |provider| %>
+                <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-facebook btn-block" do %>
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                  Entrar com <%= OmniAuth::Utils.camelize(provider) %>
+                <% end %>
+              <% end %>
+            <% end -%>
+            <hr>
             <%= render "devise/shared/links" %>
           </div>
         </div>

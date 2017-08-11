@@ -11,11 +11,12 @@ class VolunteersController < ApplicationController
   end
 
   def create
+
     @volunteer = Volunteer.new(volunteer_params)
     @volunteer.user = current_user
 
     if @volunteer.save
-      VolunteerMailer.welcome(User.last).deliver_now
+      VolunteerMailer.welcome(@volunteer).deliver_now
       redirect_to volunteers_path
     else
       render :new
@@ -46,6 +47,6 @@ class VolunteersController < ApplicationController
   end
 
   def volunteer_params
-    params.require(:volunteer).permit(:first_name, :last_name, :description)
+    params.require(:volunteer).permit(:first_name, :last_name, :description, :photo, :photo_cache)
   end
 end
