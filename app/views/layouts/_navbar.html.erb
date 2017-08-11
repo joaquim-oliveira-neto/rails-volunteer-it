@@ -11,11 +11,11 @@
 
       <!-- Links when logged in as a ngo -->
       <% if current_user.ngo.present? %>
-        <%= link_to "Create a project", new_project_path, class: "navbar-volunteer-item navbar-volunteer-link" %>
+        <%= link_to "Criar um Projeto", new_project_path, class: "navbar-volunteer-item navbar-volunteer-link" %>
       <% end %>
 
       <!-- Links when logged in as a volunteer or as a ngo-->
-      <%= link_to "My Projects", volunteer_or_ngo_path(:index), class: "navbar-volunteer-item navbar-volunteer-link" %>
+      <%= link_to "Meus Projetos", volunteer_or_ngo_path(:index), class: "navbar-volunteer-item navbar-volunteer-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-volunteer-item">
@@ -24,7 +24,7 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-volunteer-dropdown-menu">
             <li>
               <%= link_to volunteer_or_ngo_path(:edit) do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Perfil") %>
               <% end %>
             </li>
             <li>
@@ -34,7 +34,7 @@
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Desconectar") %>
               <% end %>
             </li>
           </ul>
@@ -48,7 +48,7 @@
       <!-- Login link (when logged out) -->
       <%= link_to "Cadastre sua ONG", new_user_registration_path(redirect_to: new_ngo_path), class: "navbar-volunteer-item navbar-volunteer-link" %>
       <%= link_to "Seja um voluntário", new_user_registration_path(redirect_to: new_volunteer_path), class: "navbar-volunteer-item navbar-volunteer-link" %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-volunteer-item navbar-volunteer-link" %>
+      <%= link_to t(".sign_in", default: "Entrar"), new_user_session_path, class: "navbar-volunteer-item navbar-volunteer-link" %>
     <% end %>
   </div>
 
