@@ -19,4 +19,15 @@ module ApplicationHelper
     current_user.volunteer.present? ? current_user.volunteer : current_user.ngo
 
   end
+
+  def user_picture
+         <% if volunteer_or_ngo.photo.present?
+            <% avatar_url = cl_image_path volunteer_or_ngo.photo %>
+          <% else %>
+            <% avatar_url = current_user.facebook_picture_url || "logo.png" %>
+          <% end %>
+
+
+  end
+
 end

@@ -11,13 +11,8 @@ class VolunteersController < ApplicationController
   end
 
   def create
-    if current_user.facebook_picture_url.present?
-      Cloudinary::Uploader.upload(current_user.facebook_picture_url)
-      photo = {remote_photo_url: current_user.facebook_picture_url}
-    else
-      photo = {remote_photo_url: "http://placehold.it/50x50"}
-    end
-    @volunteer = Volunteer.new(volunteer_params, photo)
+
+    @volunteer = Volunteer.new(volunteer_params)
     @volunteer.user = current_user
 
     if @volunteer.save
