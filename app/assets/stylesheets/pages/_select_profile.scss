@@ -1,8 +1,32 @@
-.select-profile {
-  .container {
+#select-profile {
+
+  .cards {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
+
+    margin: 80px;
+
+      .card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        box-shadow: $card-box-shadow;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+
+        background-size: cover !important;
+        background-position: center;
+
+        margin: 20px;
+        padding: 10px;
+
+        height: 400px;
+        width: 400px;
+
+        h3 {
+          color:white;
+        }
+      }
   }
 }
